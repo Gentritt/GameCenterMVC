@@ -23,7 +23,6 @@ namespace GameCenterMVC.Controllers
         [HttpPost]
         public ActionResult Login(Login objLogin)
 		{
-
             ValidateUser validateUser = new ValidateUser();
 			if (ModelState.IsValid)
 			{
@@ -33,7 +32,7 @@ namespace GameCenterMVC.Controllers
                     Session["Username"] = objLogin.Username;
                     return RedirectToAction("Index", "Account");
 				}
-                 ModelState.AddModelError("Error", "Invalid Email and Password");
+                 ModelState.AddModelError("Error", "Invalid Username Or Password");
 				
 			}
             return View();

@@ -132,7 +132,7 @@
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\ComputerParts.cs" />
     <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\Interface\ICrudOperations.cs" />
+    <Compile Include="Models\Interfaces\ICrudOperations.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Products.cs" />
@@ -179,9 +179,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
