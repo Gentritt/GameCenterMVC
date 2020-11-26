@@ -24,6 +24,7 @@ namespace GameCenterMVC.Models
 		public string Password { get; set; }
 		public Decimal PayCheck { get; set; }
 		public bool IsActive { get; set; }
+		public int RoleID { get; set; }
 		public DateTime ActiveDate { get; set; }
 
 
