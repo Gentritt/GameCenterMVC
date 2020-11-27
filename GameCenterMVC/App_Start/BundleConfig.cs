@@ -24,6 +24,7 @@ namespace GameCenterMVC
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
 					  "~/Content/bootstrap.css",
+					   "~/Content/assets/bootstrap.css",
 					  "~/Content/site.css"));
 		}
 	}

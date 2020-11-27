@@ -30,7 +30,7 @@ namespace GameCenterMVC.Controllers
                 if(validateUser.ValidateUsers(objLogin.Username, objLogin.Password))
 				{
                     Session["Username"] = objLogin.Username;
-                    return RedirectToAction("Index", "Account");
+                    return RedirectToAction("Index", "DashBoard");
 				}
                  ModelState.AddModelError("Error", "Invalid Username Or Password");
 				
