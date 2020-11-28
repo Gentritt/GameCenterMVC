@@ -24,6 +24,7 @@ namespace GameCenterMVC.Models
 		[Required(ErrorMessage ="Please Enter Birthday")]
 		public DateTime Birthday { get; set; }
 		[Required(ErrorMessage ="Please Enter PhoneNumber")]
+		[DataType(DataType.PhoneNumber)]
 		public string PhoneNumber { get; set; }
 		[Required(ErrorMessage ="Please Enter Email")]
 		public string Email { get; set; }
