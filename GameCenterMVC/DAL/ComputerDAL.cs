@@ -1,4 +1,5 @@
 ﻿using GameCenterMVC.Models;
+using GameCenterMVC.Models.Interface;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,9 +8,9 @@ using System.Web;
 
 namespace GameCenterMVC.DAL
 {
-	public class ComputerDAL
+	public class ComputerDAL:Computer, ICrudOperations<Computer>
 	{
-		public static List<Computer> GetAll()
+		public List<Computer> GetALL()
 		{
 
 			try
@@ -65,5 +66,19 @@ namespace GameCenterMVC.DAL
 			}
 		}
 
+		public int ADD(Computer model)
+		{
+			throw new NotImplementedException();
+		}
+
+		public int Modify(Computer model)
+		{
+			throw new NotImplementedException();
+		}
+
+		public int Remove(int ID)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

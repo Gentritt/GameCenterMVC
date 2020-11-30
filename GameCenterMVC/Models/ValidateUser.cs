@@ -11,7 +11,8 @@ namespace GameCenterMVC.Models
 
 		public bool ValidateUsers(string username, string password)
 		{
-			if  (EmployeeDAL.GetAll().Any(c => c.UserName == username && c.Password == password))
+			EmployeeDAL employee = new EmployeeDAL();
+			if  (employee.GetALL().Any(c => c.UserName == username && c.Password == password))
 				return true;
 				
 			else

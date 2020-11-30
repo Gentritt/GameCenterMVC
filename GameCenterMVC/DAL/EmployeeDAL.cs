@@ -8,9 +8,9 @@ using System.Web;
 
 namespace GameCenterMVC.DAL
 {
-	public class EmployeeDAL:Employee
+	public class EmployeeDAL: ICrudOperations<Employee>
 	{
-		public static List<Employee> GetAll()
+		public  List<Employee> GetALL()
 		{
 
 			try
@@ -80,9 +80,9 @@ namespace GameCenterMVC.DAL
 			}
 		}
 
-		public  static  bool ADD(Employee model)
+		public int ADD(Employee model)
 		{
-			bool added = false;
+		
 			try
 			{
 				using (var conn = SqlHelper.GetConnection())
@@ -103,13 +103,13 @@ namespace GameCenterMVC.DAL
 						cmd.Parameters.AddWithValue("@insertDate", model.InsertDate);
 						cmd.Parameters.AddWithValue("@adress", model.Address);
 						cmd.Parameters.AddWithValue("@roleID", model.RoleID);
-						
-						added = cmd.ExecuteNonQuery() > 0;
-						
+
+						int rowaffected = cmd.ExecuteNonQuery();
 
 
+						return rowaffected;
 					}
-					return added;
+					
 
 				}
 
@@ -117,13 +117,8 @@ namespace GameCenterMVC.DAL
 			catch (Exception e)
 			{
 
-				return added;
+				return -1;
 			}
-		}
-
-		public List<Employee> GetALL()
-		{
-			throw new NotImplementedException();
 		}
 
 		public int Modify(Employee model)
@@ -135,6 +130,16 @@ namespace GameCenterMVC.DAL
 		{
 			throw new NotImplementedException();
 		}
+
+		int ICrudOperations<Employee>.ADD(Employee model)
+		{
+			throw new NotImplementedException();
+		}
+
+		//public List<Employee> GetALL()
+		//{
+		//	throw new NotImplementedException();
+		//}
 	}
 
 	

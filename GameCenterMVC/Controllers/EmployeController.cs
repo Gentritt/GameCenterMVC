@@ -13,19 +13,20 @@ namespace GameCenterMVC.Controllers
         // GET: Employe
         public ActionResult Index()
         {
-            List<Employee> employees = EmployeeDAL.GetAll().ToList();
+            EmployeeDAL employee = new EmployeeDAL();
+            List<Employee> employees = employee.GetALL().ToList();
             ViewBag.Employee = employees;
             return View(employees);
         }
-        public ActionResult IndexTest()
-		{
-            List<Employee> employees = EmployeeDAL.GetAll().ToList();
-            ViewBag.Employee = employees;
-            return View(employees);
+		//public ActionResult IndexTest()
+		//{
+		//	List<Employee> employees = EmployeeDAL.GetAll().ToList();
+		//	ViewBag.Employee = employees;
+		//	return View(employees);
 
-        }
-        // GET: Employe/Details/5
-        public ActionResult Details(int id)
+		//}
+		// GET: Employe/Details/5
+		public ActionResult Details(int id)
         {
             return View();
         }
@@ -38,13 +39,14 @@ namespace GameCenterMVC.Controllers
 
         // POST: Employe/Create
         [HttpPost]
-        public ActionResult Create(EmployeeDAL employee)
+        public ActionResult Create(Employee employee)
         {
-
+            EmployeeDAL employeeDAL = new EmployeeDAL();
 			try
 			{
-				if (EmployeeDAL.ADD(employee))
+				if (ModelState.IsValid)
 				{
+                    employeeDAL.ADD(employee);
                     return RedirectToAction("Index");
 
 				}

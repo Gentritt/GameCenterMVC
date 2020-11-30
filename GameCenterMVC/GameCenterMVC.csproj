@@ -126,8 +126,10 @@
     <Compile Include="Controllers\ComputerController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\EmployeController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="DAL\ComputerDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\RolesDAL.cs" />
     <Compile Include="DAL\SqlHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -697,6 +699,7 @@
     <Content Include="Views\Employe\Edit.cshtml" />
     <Content Include="Views\Employe\Create.cshtml" />
     <Content Include="Views\Computer\Index.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

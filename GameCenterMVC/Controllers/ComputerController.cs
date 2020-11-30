@@ -11,13 +11,13 @@ namespace GameCenterMVC.Controllers
     public class ComputerController : Controller
     {
         // GET: Computer
+        ComputerDAL computerDAL = new ComputerDAL();
         public ActionResult Index()
         {
-            List<Computer> computers = ComputerDAL.GetAll().ToList();
+            List<Computer> computers = computerDAL.GetALL().ToList();
             ViewBag.Computer = computers;
             return View(computers);
 
-            
         }
     }
 }
