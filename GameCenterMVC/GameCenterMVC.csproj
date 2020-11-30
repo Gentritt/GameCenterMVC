@@ -272,7 +272,7 @@
     <Content Include="Content\Images\Space.jpg" />
     <Content Include="Content\Label.css" />
     <Content Include="Content\Table.css" />
-    <Content Include="DAL\Database\Game-Center.sql" />
+    <Content Include="DAL\Database\DBGameCenter.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
