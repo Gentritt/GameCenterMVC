@@ -10,6 +10,7 @@ namespace GameCenterMVC.Models
 	{
 		[Key]
 		public int ComputerID { get; set; }
+		public int ComputerPartID { get; set; }
 		public virtual ComputerParts ComputerParts { get; set; }
 		public double PricePerHour { get; set; }
 		public bool IsActive { get; set; }

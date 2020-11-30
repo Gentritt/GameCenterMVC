@@ -123,8 +123,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ComputerController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\EmployeController.cs" />
+    <Compile Include="DAL\ComputerDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
     <Compile Include="DAL\SqlHelper.cs" />
     <Compile Include="Global.asax.cs">
@@ -694,6 +696,7 @@
     <Content Include="Views\Employe\IndexTest.cshtml" />
     <Content Include="Views\Employe\Edit.cshtml" />
     <Content Include="Views\Employe\Create.cshtml" />
+    <Content Include="Views\Computer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
