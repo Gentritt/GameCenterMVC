@@ -51,7 +51,7 @@
 					<h2 class="menu-title">Game-Center USERS</h2><!-- /.menu-title -->
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Employess</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-user"></i>Employess</a>
 						<ul class="sub-menu children dropdown-menu">
 							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Employe")">Employess</a></li>
 
@@ -59,7 +59,7 @@
 					</li>
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Members</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-user-circle"	></i>Members</a>
 						<ul class="sub-menu children dropdown-menu">
 							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Members")">Members</a></li>
 
@@ -78,7 +78,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
 						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>ComputerParts</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Computer")">ComputersParts</a></li>
+							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "ComputerParts")">ComputersParts</a></li>
 
 						</ul>
 					</li>
@@ -86,9 +86,19 @@
 					<h2 class="menu-title">GameCenter Products</h2><!-- /.menu-title -->
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Products</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-delicious"></i>Products</a>
 						<ul class="sub-menu children dropdown-menu">
 							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Products")">Products</a></li>
+
+						</ul>
+					</li>
+
+					<h2 class="menu-title">GameCenter Logout</h2><!-- /.menu-title -->
+					@*<li class="menu-item-has-children dropdown">*@
+						@*<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Products</a>
+						<ul class="sub-menu children dropdown-menu">*@
+							<li><i class="menu-icon " ></i><a href="@Url.Action("LogOut", "Account")">LOGOUT</a></li>
 
 						</ul>
 					</li>

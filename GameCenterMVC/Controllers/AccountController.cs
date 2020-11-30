@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace GameCenterMVC.Controllers
 {
@@ -29,6 +30,7 @@ namespace GameCenterMVC.Controllers
 
                 if(validateUser.ValidateUsers(objLogin.Username, objLogin.Password))
 				{
+                    FormsAuthentication.SetAuthCookie(objLogin.Username, false);
                     Session["Username"] = objLogin.Username;
                     return RedirectToAction("Index", "DashBoard");
 				}
@@ -36,6 +38,14 @@ namespace GameCenterMVC.Controllers
 				
 			}
             return View();
+		}
+
+        public ActionResult LogOut()
+		{
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Login", "Account");
+                
 		}
     }
 }
