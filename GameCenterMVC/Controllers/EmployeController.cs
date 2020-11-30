@@ -38,18 +38,24 @@ namespace GameCenterMVC.Controllers
 
         // POST: Employe/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(EmployeeDAL employee)
         {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+			try
+			{
+				if (EmployeeDAL.ADD(employee))
+				{
+                    return RedirectToAction("Index");
+
+				}
                 return View();
+
             }
+			catch (Exception)
+			{
+
+                return View();
+			}
         }
 
         // GET: Employe/Edit/5

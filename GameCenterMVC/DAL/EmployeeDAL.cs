@@ -1,4 +1,5 @@
 ﻿using GameCenterMVC.Models;
+using GameCenterMVC.Models.Interface;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace GameCenterMVC.DAL
 {
-	public class EmployeeDAL
+	public class EmployeeDAL:Employee
 	{
 		public static List<Employee> GetAll()
 		{
@@ -45,8 +46,9 @@ namespace GameCenterMVC.DAL
 									users.UserName = reader["UserName"].ToString();
 									users.Password = reader["Password"].ToString();
 									users.PayCheck = Decimal.Parse( reader["PayCheck"].ToString());
-									users.IsActive = bool.Parse(reader["IsActive"].ToString());
-									if(reader["ActiveDate"]!= DBNull.Value)
+									if(reader["IsActive"]!= DBNull.Value)
+									    users.IsActive = bool.Parse(reader["IsActive"].ToString());
+									if (reader["ActiveDate"]!= DBNull.Value)
 										users.ActiveDate = DateTime.Parse(reader["ActiveDate"].ToString());
 									if (reader["InsertBy"] != DBNull.Value)
 										users.InsertBy = reader["InsertBy"].ToString();
@@ -78,6 +80,62 @@ namespace GameCenterMVC.DAL
 			}
 		}
 
+		public  static  bool ADD(Employee model)
+		{
+			bool added = false;
+			try
+			{
+				using (var conn = SqlHelper.GetConnection())
+				{
 
+					using (var cmd = SqlHelper.Command(conn, cmdText: "Add_Employee" , cmdtype:System.Data.CommandType.StoredProcedure))
+					{
+						cmd.Parameters.AddWithValue("@name", model.Name);
+						cmd.Parameters.AddWithValue("@personalID", model.PersonalID);
+						cmd.Parameters.AddWithValue("@lastName", model.LastName);
+						cmd.Parameters.AddWithValue("@birthday", model.Birthday);
+						cmd.Parameters.AddWithValue("@email", model.Email);
+						cmd.Parameters.AddWithValue("@phoneNumber", model.PhoneNumber);
+						cmd.Parameters.AddWithValue("@userName", model.UserName);
+						cmd.Parameters.AddWithValue("@password", model.Password);
+						cmd.Parameters.AddWithValue("@payCheck", model.PayCheck);
+						cmd.Parameters.AddWithValue("@insertBy", model.InsertBy);
+						cmd.Parameters.AddWithValue("@insertDate", model.InsertDate);
+						cmd.Parameters.AddWithValue("@adress", model.Address);
+						cmd.Parameters.AddWithValue("@roleID", model.RoleID);
+						
+						added = cmd.ExecuteNonQuery() > 0;
+						
+
+
+					}
+					return added;
+
+				}
+
+			}
+			catch (Exception e)
+			{
+
+				return added;
+			}
+		}
+
+		public List<Employee> GetALL()
+		{
+			throw new NotImplementedException();
+		}
+
+		public int Modify(Employee model)
+		{
+			throw new NotImplementedException();
+		}
+
+		public int Remove(int ID)
+		{
+			throw new NotImplementedException();
+		}
 	}
+
+	
 }

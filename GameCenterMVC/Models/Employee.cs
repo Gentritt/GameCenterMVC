@@ -22,6 +22,7 @@ namespace GameCenterMVC.Models
 		[Required(ErrorMessage ="Please enter the Address")]
 		public string Address { get; set; }
 		[Required(ErrorMessage ="Please Enter Birthday")]
+		[DisplayFormat(DataFormatString ="{0:MM/dd/yyyy}")]
 		public DateTime Birthday { get; set; }
 		[Required(ErrorMessage ="Please Enter PhoneNumber")]
 		[DataType(DataType.PhoneNumber)]

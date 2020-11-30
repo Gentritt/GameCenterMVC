@@ -268,6 +268,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\GamingPC.jpg" />
     <Content Include="Content\Images\Space.jpg" />
+    <Content Include="Content\Label.css" />
     <Content Include="Content\Table.css" />
     <Content Include="DAL\Database\Game-Center.sql" />
     <Content Include="favicon.ico" />
@@ -691,6 +692,8 @@
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
     <Content Include="Views\Employe\Index.cshtml" />
     <Content Include="Views\Employe\IndexTest.cshtml" />
+    <Content Include="Views\Employe\Edit.cshtml" />
+    <Content Include="Views\Employe\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
@@ -733,6 +736,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties content_4assets_4scss_4socials_1css_1map__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

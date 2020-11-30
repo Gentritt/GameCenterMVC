@@ -360,7 +360,7 @@ body.open .navbar .navbar-brand.hidden {
   width: 100%; }
 
 .open .right-panel {
-  margin-left: -210px; }
+  margin-left: -210; }
 
 header.fixed-top {
   background: #fff;

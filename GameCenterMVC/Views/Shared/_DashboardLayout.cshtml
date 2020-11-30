@@ -13,14 +13,14 @@
 	<link rel="apple-touch-icon" href="apple-icon.png">
 	<link rel="shortcut icon" href="favicon.ico">
 
-	@*<link rel="stylesheet" href="~/Content/assets/css/normalize.css">*@
+	<link rel="stylesheet" href="~/Content/assets/css/normalize.css">
 	<link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
-	@*<link rel="stylesheet" href="~/Content/assets/css/font-awesome.min.css">*@
-	@*<link rel="stylesheet" href="~/Content/assets/css/themify-icons.css">*@
-	@*<link rel="stylesheet" href="~/Content/assets/css/flag-icon.min.css">*@
-	@*<link rel="stylesheet" href="~/Content/assets/css/cs-skin-elastic.css">*@
+	<link rel="stylesheet" href="~/Content/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="~/Content/assets/css/themify-icons.css">
+	<link rel="stylesheet" href="~/Content/assets/css/flag-icon.min.css">
+	<link rel="stylesheet" href="~/Content/assets/css/cs-skin-elastic.css">
 	<link rel="stylesheet" href="~/Content/assets/scss/style.css">
-	@*<link href="~/Content/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">*@
+	<link href="~/Content/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -53,16 +53,16 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
 						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Employess</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Home")">Employess</a></li>
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Employe")">Add Employess</a></li>
+							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Employe")">Employess</a></li>
+			
 						</ul>
 					</li>
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
 						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Computers</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Home")">Computers</a></li>
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Customers")">Add Computers</a></li>
+							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Computer")">Computers</a></li>
+
 						</ul>
 					</li>
 
@@ -101,46 +101,45 @@
 		</header>
 		<!-- /header -->
 		<!-- Header-->
-
-		<div class="breadcrumbs">
+		@*<div class="breadcrumbs">
 			<div class="col-sm-4">
 				<div class="page-header float-left">
 					<div class="page-title">
-						@*<h4>username : @Session["username"].ToString()</h4>*@
-						@*<a href="@Url.Action("Logout","AdminLogin")">System LogOut</a>*@
+						<h4>username : @Session["username"].ToString()</h4>
+						<a href="@Url.Action("Logout","AdminLogin")">System LogOut</a>
 					</div>
 				</div>
 			</div>
 
-		</div>
-
+		</div>*@
+		
 		<div class="breadcrumbs">
-			<div class="col-md-12>
-				<div class="page-header float-left">
-					<div class="container body-content" style="background-color:aliceblue;">
-						@RenderBody()
-					</div>
+				<div class="col-md-12>
+					<div class="page-header float-left">
+						<div class="container body-content">
+							@RenderBody()
+						</div>
+					</divclass="page-header>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Right Panel -->
+		<!-- Right Panel -->
 
-	<script src="~/Content/assets/js/vendor/jquery-2.1.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-	<script src="~/Content/assets/js/plugins.js"></script>
-	<script src="~/Content/assets/js/main.js"></script>
+		<script src="~/Content/assets/js/vendor/jquery-2.1.4.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+		<script src="~/Content/assets/js/plugins.js"></script>
+		<script src="~/Content/assets/js/main.js"></script>
 
 
-	@*<script src="~/Content/assets/js/lib/chart-js/Chart.bundle.js"></script>
-	<script src="~/Content/assets/js/dashboard.js"></script>
-	<script src="~/Content/assets/js/widgets.js"></script>*@
-	@*<script src="~/Content/assets/js/lib/vector-map/jquery.vmap.js"></script>*@
-	@*<script src="~/Content/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-	<script src="~/Content/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-	<script src="~/Content/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>*@
-	@*<script>
+		@*<script src="~/Content/assets/js/lib/chart-js/Chart.bundle.js"></script>
+		<script src="~/Content/assets/js/dashboard.js"></script>
+		<script src="~/Content/assets/js/widgets.js"></script>*@
+		@*<script src="~/Content/assets/js/lib/vector-map/jquery.vmap.js"></script>*@
+		@*<script src="~/Content/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+		<script src="~/Content/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+		<script src="~/Content/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>*@
+		@*<script>
 			(function ($) {
 				"use strict";
 
@@ -159,13 +158,13 @@
 			})(jQuery);
 		</script>*@
 
-	@Scripts.Render("~/bundles/jquery")
-	@Scripts.Render("~/bundles/bootstrap")
-	<script src="~/Scripts/alertify.min.js"></script>
-	<script src="~/Scripts/jquery.validate.min.js"></script>
-	<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-	@Scripts.Render("~/Content/Metronic/global/plugins/jquery.min.js")
-	@RenderSection("scripts", required: false)
+		@Scripts.Render("~/bundles/jquery")
+		@Scripts.Render("~/bundles/bootstrap")
+		<script src="~/Scripts/alertify.min.js"></script>
+		<script src="~/Scripts/jquery.validate.min.js"></script>
+		<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+		@Scripts.Render("~/Content/Metronic/global/plugins/jquery.min.js")
+		@RenderSection("scripts", required: false)
 
 </body>
 </html>
