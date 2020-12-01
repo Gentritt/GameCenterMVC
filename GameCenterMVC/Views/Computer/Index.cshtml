@@ -92,7 +92,7 @@
 
     function Delete(id) {
             alertify.confirm('customer Management System', 'Are You Sure To Delete This Record ?', function () {
-                window.location.href = '@Url.Action("Delete","Computer")/' + id;
+                window.location.href = '@Url.Action("Remove","Computer")/' + id;
             }, null);
     }
 	</script>
