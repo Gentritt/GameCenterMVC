@@ -27,9 +27,11 @@ namespace GameCenterMVC.Controllers
         [HttpPost]
         public ActionResult Create(Client client)
         {
-
+            ValidationsExists validations = new ValidationsExists();
             try
             {
+                if (validations.ExitsMember(client.Username))
+                    ModelState.AddModelError("", "Please Try Another Username");
                 if (ModelState.IsValid)
                 {
                     clientDAL.ADD(client);

@@ -719,6 +719,12 @@
     <Content Include="Views\Client\Update.cshtml" />
     <Content Include="Views\Client\Remove.cshtml" />
     <Content Include="Views\Employe\Delete.cshtml" />
+    <Content Include="Views\ComputerParts\Update.cshtml" />
+    <Content Include="Views\ComputerParts\Remove.cshtml" />
+    <Content Include="Views\Product\Update.cshtml" />
+    <Content Include="Views\Product\Remove.cshtml" />
+    <Content Include="Views\Computer\Update.cshtml" />
+    <Content Include="Views\Computer\Remove.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

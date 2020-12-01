@@ -62,7 +62,7 @@
 	   	@Html.DisplayFor(modelItem => item.Quantity)
 	   </td>
 	   <td>
-	   	@Html.ActionLink("Edit", "Edit", new { id = item.ProductID }, new { @class = "btn btn-warning" })
+	   	@Html.ActionLink("Update", "Update", new { id = item.ProductID }, new { @class = "btn btn-warning" })
 	   <a onclick="Delete(@item.ProductID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
 	   </td>
 	   </tr>
@@ -80,7 +80,7 @@
 
     function Delete(id) {
         alertify.confirm('Warning !!', 'Are You Sure To Delete This Record ?', function () {
-            window.location.href = '@Url.Action("Delete","Product")/' + id;
+            window.location.href = '@Url.Action("Remove","Product")/' + id;
         }, null);
     }
 	</script>

@@ -11,7 +11,9 @@ namespace GameCenterMVC.Models
 
 		[Key]
 		public int RoleID { get; set; }
+		[Required(ErrorMessage ="Required")]
 		public string Name { get; set; }
+		[Required(ErrorMessage ="Required")]
 		public string Description { get; set; }
 	}
 }

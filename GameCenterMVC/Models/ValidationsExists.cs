@@ -8,10 +8,16 @@ namespace GameCenterMVC.Models
 {
 	public class ValidationsExists
 	{
-		public bool Exits(string username)
+		public bool ExitsEmployee(string username)
 		{
 			EmployeeDAL employeeDAL = new EmployeeDAL();
 			return employeeDAL.GetALL().Any(x => x.UserName == username);
+		}
+
+		public bool ExitsMember(string username)
+		{
+			ClientDAL clientDAL = new ClientDAL();
+			return clientDAL.GetALL().Any(x => x.Username == username);
 		}
 	}
 }

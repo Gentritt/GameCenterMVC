@@ -134,7 +134,7 @@
 				@Html.DisplayFor(modelItem => item.Cooler)
 			</td>
 			<td>
-				@Html.ActionLink("Edit", "Edit", new { id = item.PartID }, new { @class = "btn btn-warning" })
+				@Html.ActionLink("Update", "Update", new { id = item.PartID }, new { @class = "btn btn-warning" })
 				<a onclick="Delete(@item.PartID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
 
 			</td>
@@ -155,7 +155,7 @@
 
     function Delete(id) {
             alertify.confirm('customer Management System', 'Are You Sure To Delete This Record ?', function () {
-                window.location.href = '@Url.Action("Delete","ComputerParts")/' + id;
+                window.location.href = '@Url.Action("Remove","ComputerParts")/' + id;
             }, null);
     }
 	</script>

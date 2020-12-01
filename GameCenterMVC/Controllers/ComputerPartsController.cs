@@ -14,7 +14,7 @@ namespace GameCenterMVC.Controllers
         ComputerPartsDAL computerPartsDAL = new ComputerPartsDAL();
         public ActionResult Index()
         {
-            List<ComputerParts> pcParts = computerPartsDAL.GetALL().ToList();
+            List<ComputerParts> pcParts = ComputerPartsDAL.GetALL().ToList();
             ViewBag.ComputerParts = pcParts;
             return View(pcParts);
         }
@@ -46,6 +46,46 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
+        public ActionResult Update(int id)
+		{
+            return View(ComputerPartsDAL.GetByID(id));
+		}
+         [HttpPost]
+         public ActionResult Update(ComputerParts parts)
+		 {
+			try
+			{
+				if (ModelState.IsValid)
+				{
+                    computerPartsDAL.Modify(parts);
+                    return RedirectToAction("Index");
+
+				}
+                return View();
+			}
+			catch (Exception)
+			{
+
+                return View();
+			}
+		}
+        public ActionResult Remove(int ID)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+                    computerPartsDAL.Remove(ID);
+                    return RedirectToAction("Index");
+				}
+                return View();
+			}
+			catch (Exception e)
+			{
+
+                return View();
+			}
+		}
     }
     
 }

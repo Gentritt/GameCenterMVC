@@ -46,5 +46,43 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
+        public ActionResult Update(int id)
+		{
+            return View(ComputerDAL.getPcByID(id));
+		}
+        [HttpPost]
+        public ActionResult Update(int id, Computer computer)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+                    computerDAL.Modify(computer);
+                    return RedirectToAction("Index");
+				}
+                return View();
+			}
+			catch (Exception)
+			{
+
+                return View();
+			}
+		}
+        public ActionResult Remove(int id)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+                    computerDAL.Remove(id);
+                    return RedirectToAction("Index");
+				}
+                return View();
+			}
+			catch (Exception)
+			{
+                return View();
+			}
+		}
     }
 }

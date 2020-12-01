@@ -1,4 +1,5 @@
 ﻿@model GameCenterMVC.Models.Computer
+@using GameCenterMVC.DAL
 
 @{
     ViewBag.Title = "ADD";
@@ -36,10 +37,15 @@
 
     <div class="form-group">
         @Html.LabelFor(model => model.ComputerPartID, htmlAttributes: new { @class = "control-label col-md-5" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ComputerPartID, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ComputerPartID, "", new { @class = "text-danger" })
-        </div>
+		<div class="col-md-10">
+			@*@Html.EditorFor(model => model.ComputerPartID, new { htmlAttributes = new { @class = "form-control" } })*@
+			@Html.DropDownListFor(model => model.ComputerPartID, new SelectList(ComputerPartsDAL.GetALL().ToList(), "PartID", "PartID"), new
+			   {
+				   @class = "form-control"
+
+			   })
+			@Html.ValidationMessageFor(model => model.ComputerPartID, "", new { @class = "text-danger" })
+		</div>
     </div>
 
     <div class="form-group">

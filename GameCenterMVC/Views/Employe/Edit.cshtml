@@ -1,5 +1,5 @@
 ﻿@model GameCenterMVC.Models.Employee
-
+@using GameCenterMVC.DAL
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -71,7 +71,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Birthday, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control", placeholder = "e.g MM/DD/YYYY" } })
                 @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -127,10 +127,15 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.RoleID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RoleID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RoleID, "", new { @class = "text-danger" })
-            </div>
+			<div class="col-md-10">
+				@*@Html.EditorFor(model => model.RoleID, new { htmlAttributes = new { @class = "form-control" } })*@
+				@Html.DropDownListFor(model => model.RoleID, new SelectList(RolesDAL.GetALL().ToList(), "RoleID", "RoleID"), new
+			   {
+				   @class = "form-control"
+
+			   })
+				@Html.ValidationMessageFor(model => model.RoleID, "", new { @class = "text-danger" })
+			</div>
         </div>
 
    

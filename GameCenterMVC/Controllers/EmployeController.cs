@@ -44,7 +44,7 @@ namespace GameCenterMVC.Controllers
         {
             ValidationsExists validations = new ValidationsExists();
             EmployeeDAL employeeDAL = new EmployeeDAL();
-            if (validations.Exits(employee.UserName))
+            if (validations.ExitsEmployee(employee.UserName))
                 ModelState.AddModelError("", "Please Try Another Username, this one Exists !");
             try
 			{

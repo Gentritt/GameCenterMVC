@@ -2,6 +2,7 @@
 using GameCenterMVC.Models.Interface;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -101,12 +102,108 @@ namespace GameCenterMVC.DAL
 
 		public int Modify(Computer model)
 		{
-			throw new NotImplementedException();
-		}
 
+			try
+			{
+				using (var conn = SqlHelper.GetConnection())
+				{
+
+					using (var cmd = SqlHelper.Command(conn, cmdText: "Edit_Computer", cmdtype: System.Data.CommandType.StoredProcedure))
+					{
+						cmd.Parameters.AddWithValue("@computerID", model.ComputerID);
+						cmd.Parameters.AddWithValue("@pricePerHour", model.PricePerHour);
+						cmd.Parameters.AddWithValue("@partID", model.ComputerPartID);
+						cmd.Parameters.AddWithValue("@updateBy", model.UpdateBy);
+						cmd.Parameters.AddWithValue("@UpdateDate", model.UpdateDate);
+						int rowaffected = cmd.ExecuteNonQuery();
+						return rowaffected;
+					}
+
+
+				}
+
+			}
+			catch (Exception e)
+			{
+
+				return -1;
+			}
+		}
+		public static Computer getPcByID(int ID)
+		{
+			Computer pc = null;
+			try
+			{
+				using (var con = SqlHelper.GetConnection())
+				{
+					using (var cmd = SqlHelper.Command(con, cmdText: "getPcByID", cmdtype: CommandType.StoredProcedure))
+					{
+
+						cmd.Parameters.AddWithValue("@computerID", ID);
+
+
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+
+							if (reader.HasRows)
+							{
+
+								pc = new Computer();
+								while (reader.Read())
+								{
+
+									//Guest guest = new Guest();
+									//Employee users = new Employee();
+
+									pc.ComputerID = int.Parse(reader["ComputerID"].ToString());
+									pc.ComputerPartID = int.Parse(reader["PartID"].ToString());
+									pc.PricePerHour = double.Parse(reader["PricePerHour"].ToString());
+									if (reader["UpdateBy"] != DBNull.Value)
+										pc.UpdateBy = reader["UpdateBy"].ToString();
+									if (reader["UpdateDate"] != DBNull.Value)
+										pc.UpdateDate = DateTime.Parse(reader["UpdateDate"].ToString());
+								}
+							}
+
+						}
+					}
+
+
+
+				}
+
+				return pc;
+
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+		}
 		public int Remove(int ID)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				using (var conn = SqlHelper.GetConnection())
+				{
+
+					using (var cmd = SqlHelper.Command(conn, cmdText: "Delete_Computer", cmdtype: System.Data.CommandType.StoredProcedure))
+					{
+						cmd.Parameters.AddWithValue("@computerID", ID);
+						int rowaffected = cmd.ExecuteNonQuery();
+						return rowaffected;
+					}
+
+
+				}
+
+			}
+			catch (Exception e)
+			{
+
+				return -1;
+			}
 		}
 	}
 }
