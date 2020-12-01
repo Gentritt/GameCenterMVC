@@ -1,0 +1,137 @@
+﻿@model IEnumerable<GameCenterMVC.Models.ComputerParts>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+<h2>Index</h2>
+
+<th>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a href="@Url.Action("Create","ComputerParts")" @*asp-action="Create"*@ class="btn btn-primary text-white"> <i class="fa fa-plus-circle"></i> New PcParts</a>
+</th>
+<table class="table">
+    <tr>
+        <!--<th>
+        @Html.DisplayNameFor(model => model.InsertBy)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.InsertDate)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.UpdateBy)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.UpdateDate)
+    </th>-->
+        <th>
+            @Html.DisplayNameFor(model => model.Case)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mouse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KeyBoard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeadSet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monitor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MousePad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CPU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GPU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherBoard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RAM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SSD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HDD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PSU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cooler)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <!--<td>
+        @Html.DisplayFor(modelItem => item.InsertBy)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InsertDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UpdateBy)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UpdateDate)
+    </td>-->
+    <td>
+        @Html.DisplayFor(modelItem => item.Case)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Mouse)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KeyBoard)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HeadSet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Monitor)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MousePad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CPU)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GPU)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MotherBoard)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RAM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SSD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HDD)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PSU)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cooler)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.PartID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.PartID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.PartID })
+    </td>
+</tr>
+    }
+
+</table>

@@ -8,32 +8,32 @@ using System.Web.Mvc;
 
 namespace GameCenterMVC.Controllers
 {
-    public class ComputerController : Controller
+    public class ComputerPartsController : Controller
     {
-        // GET: Computer
-        ComputerDAL computerDAL = new ComputerDAL();
+        // GET: ComputerParts
+        ComputerPartsDAL computerPartsDAL = new ComputerPartsDAL();
         public ActionResult Index()
         {
-            List<Computer> computers = computerDAL.GetALL().ToList();
-            ViewBag.Computer = computers;
-            return View(computers);
-
+            List<ComputerParts> pcParts = computerPartsDAL.GetALL().ToList();
+            ViewBag.ComputerParts = pcParts;
+            return View(pcParts);
         }
+        // GET: ComputerParts/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Computer/Create
+        // POST: ComputerParts/Create
         [HttpPost]
-        public ActionResult Create(Computer computer)
+        public ActionResult Create(ComputerParts pcParts)
         {
-
+            
             try
             {
                 if (ModelState.IsValid)
                 {
-                    computerDAL.ADD(computer);
+                    computerPartsDAL.ADD(pcParts);
                     return RedirectToAction("Index");
 
                 }
@@ -47,4 +47,5 @@ namespace GameCenterMVC.Controllers
             }
         }
     }
+    
 }

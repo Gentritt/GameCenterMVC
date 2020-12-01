@@ -12,7 +12,29 @@ namespace GameCenterMVC.DAL
 	{
 		public int ADD(Roles model)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				using (var conn = SqlHelper.GetConnection())
+				{
+
+					using (var cmd = SqlHelper.Command(conn, cmdText: "Add_Roles", cmdtype: System.Data.CommandType.StoredProcedure))
+					{
+						cmd.Parameters.AddWithValue("@roleName", model.Name);
+						cmd.Parameters.AddWithValue("@description", model.Description);
+						cmd.Parameters.AddWithValue("@insertBy", model.InsertBy);
+						cmd.Parameters.AddWithValue("@inserDate", model.InsertDate);
+
+						int rowaffected = cmd.ExecuteNonQuery();
+
+						return rowaffected;
+					}
+				}
+			}
+			catch (Exception e)
+			{
+
+				return -1;
+			}
 		}
 
 		public List<Roles> GetALL()

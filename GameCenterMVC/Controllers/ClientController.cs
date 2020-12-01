@@ -8,32 +8,31 @@ using System.Web.Mvc;
 
 namespace GameCenterMVC.Controllers
 {
-    public class ComputerController : Controller
+    public class ClientController : Controller
     {
-        // GET: Computer
-        ComputerDAL computerDAL = new ComputerDAL();
+        // GET: Client
+        ClientDAL clientDAL = new ClientDAL();
         public ActionResult Index()
         {
-            List<Computer> computers = computerDAL.GetALL().ToList();
-            ViewBag.Computer = computers;
-            return View(computers);
-
+            List<Client> clients = clientDAL.GetALL().ToList();
+            ViewBag.Client = clients;
+            return View(clients);
         }
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Computer/Create
+        // POST: Client/Create
         [HttpPost]
-        public ActionResult Create(Computer computer)
+        public ActionResult Create(Client client)
         {
 
             try
             {
                 if (ModelState.IsValid)
                 {
-                    computerDAL.ADD(computer);
+                    clientDAL.ADD(client);
                     return RedirectToAction("Index");
 
                 }

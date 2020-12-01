@@ -123,12 +123,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\ComputerController.cs" />
+    <Compile Include="Controllers\ComputerPartsController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\EmployeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="DAL\ClientDAL.cs" />
     <Compile Include="DAL\ComputerDAL.cs" />
+    <Compile Include="DAL\ComputerPartsDAL.cs" />
     <Compile Include="DAL\EmployeeDAL.cs" />
+    <Compile Include="DAL\ProductDAL.cs" />
     <Compile Include="DAL\RolesDAL.cs" />
     <Compile Include="DAL\SqlHelper.cs" />
     <Compile Include="Global.asax.cs">
@@ -274,7 +280,7 @@
     <Content Include="Content\Images\Space.jpg" />
     <Content Include="Content\Label.css" />
     <Content Include="Content\Table.css" />
-    <Content Include="DAL\Database\DbGameCenterWEb.sql" />
+    <Content Include="DAL\Database\GameCenterScriptMVC.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -700,6 +706,14 @@
     <Content Include="Views\Employe\Create.cshtml" />
     <Content Include="Views\Computer\Index.cshtml" />
     <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Computer\Create.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\ComputerParts\Index.cshtml" />
+    <Content Include="Views\ComputerParts\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

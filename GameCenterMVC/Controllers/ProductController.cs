@@ -8,32 +8,32 @@ using System.Web.Mvc;
 
 namespace GameCenterMVC.Controllers
 {
-    public class ComputerController : Controller
+    public class ProductController : Controller
     {
-        // GET: Computer
-        ComputerDAL computerDAL = new ComputerDAL();
+        // GET: Product
+        ProductDAL productDAL = new ProductDAL();
         public ActionResult Index()
         {
-            List<Computer> computers = computerDAL.GetALL().ToList();
-            ViewBag.Computer = computers;
-            return View(computers);
-
+            List<Products> products = productDAL.GetALL().ToList();
+            ViewBag.Products = products;
+            return View(products);
         }
+        // GET: Product/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Computer/Create
+        // POST: Product/Create
         [HttpPost]
-        public ActionResult Create(Computer computer)
+        public ActionResult Create(Products product)
         {
-
+            
             try
             {
                 if (ModelState.IsValid)
                 {
-                    computerDAL.ADD(computer);
+                    productDAL.ADD(product);
                     return RedirectToAction("Index");
 
                 }

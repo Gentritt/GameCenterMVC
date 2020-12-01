@@ -35,7 +35,8 @@ namespace GameCenterMVC.DAL
 									pc.ComputerID = int.Parse(reader["ComputerID"].ToString());
 									pc.ComputerPartID = int.Parse(reader["PartID"].ToString());
 									pc.PricePerHour = double.Parse(reader["PricePerHour"].ToString());
-									pc.IsActive = bool.Parse(reader["IsActive"].ToString());
+									if (reader["IsActive"] != DBNull.Value)
+										pc.IsActive = bool.Parse(reader["IsActive"].ToString());
 									if (reader["InsertBy"] != DBNull.Value)
 										pc.InsertBy = reader["InsertBy"].ToString();
 									if (reader["InsertDate"] != DBNull.Value)
@@ -68,7 +69,34 @@ namespace GameCenterMVC.DAL
 
 		public int ADD(Computer model)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				using (var conn = SqlHelper.GetConnection())
+				{
+
+					using (var cmd = SqlHelper.Command(conn, cmdText: "Add_Computer", cmdtype: System.Data.CommandType.StoredProcedure))
+					{
+						cmd.Parameters.AddWithValue("@pricePerHour", model.PricePerHour);
+						cmd.Parameters.AddWithValue("@partID", model.ComputerPartID);
+						cmd.Parameters.AddWithValue("@insertBy", model.InsertBy);
+						cmd.Parameters.AddWithValue("@insertDate", model.InsertDate);
+						
+
+						int rowaffected = cmd.ExecuteNonQuery();
+
+
+						return rowaffected;
+					}
+
+
+				}
+
+			}
+			catch (Exception e)
+			{
+
+				return -1;
+			}
 		}
 
 		public int Modify(Computer model)

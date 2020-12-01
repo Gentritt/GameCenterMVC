@@ -18,5 +18,32 @@ namespace GameCenterMVC.Controllers
             ViewBag.Roles = roles;
             return View(roles);
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Role/Create
+        [HttpPost]
+        public ActionResult Create(Roles roles)
+        {
+            
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    rolesDAL.ADD(roles);
+                    return RedirectToAction("Index");
+
+                }
+                return View();
+
+            }
+            catch (Exception)
+            {
+
+                return View();
+            }
+        }
     }
 }

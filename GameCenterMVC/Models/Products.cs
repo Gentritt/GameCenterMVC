@@ -11,8 +11,11 @@ namespace GameCenterMVC.Models
 
 		[Key]
 		public int ProductID { get; set; }
+		[Required(ErrorMessage = "Please Enter a Name")]
 		public string Name { get; set; }
+		[Required(ErrorMessage = "Please Enter a Price")]
 		public double Price { get; set; }
+		[Required(ErrorMessage = "Please Enter a Quantity")]
 		public int Quantity { get; set; }
 		//
 	}
