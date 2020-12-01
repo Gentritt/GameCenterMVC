@@ -152,6 +152,7 @@
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\ValidateUser.cs" />
+    <Compile Include="Models\ValidationsExists.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

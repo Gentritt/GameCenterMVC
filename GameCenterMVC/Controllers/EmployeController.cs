@@ -42,8 +42,11 @@ namespace GameCenterMVC.Controllers
         [HttpPost]
         public ActionResult Create(Employee employee)
         {
+            ValidationsExists validations = new ValidationsExists();
             EmployeeDAL employeeDAL = new EmployeeDAL();
-			try
+            if (validations.Exits(employee.UserName))
+                ModelState.AddModelError("", "Please Try Another Username, this one Exists !");
+            try
 			{
 				if (ModelState.IsValid)
 				{
