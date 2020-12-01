@@ -11,6 +11,7 @@ namespace GameCenterMVC.Controllers
     public class EmployeController : Controller
     {
         // GET: Employe
+        EmployeeDAL employeeDAL = new EmployeeDAL();
         public ActionResult Index()
         {
             EmployeeDAL employee = new EmployeeDAL();
@@ -63,18 +64,23 @@ namespace GameCenterMVC.Controllers
         // GET: Employe/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(EmployeeDAL.GetByID(id));
         }
 
         // POST: Employe/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Employee collection)
         {
             try
             {
-                // TODO: Add update logic here
+				if (ModelState.IsValid)
+				{
+                    employeeDAL.Modify(collection);
+                    return RedirectToAction("Index");
 
-                return RedirectToAction("Index");
+                }
+                return View();
+
             }
             catch
             {
@@ -83,20 +89,20 @@ namespace GameCenterMVC.Controllers
         }
 
         // GET: Employe/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
 
-        // POST: Employe/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+
+
+        public ActionResult Delete(int id)
         {
             try
             {
-                // TODO: Add delete logic here
+				if (ModelState.IsValid)
+				{
+                    employeeDAL.Remove(id);
+                    return RedirectToAction("Index");
+                }
 
-                return RedirectToAction("Index");
+                return View();
             }
             catch
             {

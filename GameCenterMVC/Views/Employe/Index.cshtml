@@ -73,58 +73,58 @@
 			
 		@foreach (var item in Model)
 		{
-			<tr>
+	<tr>
 
-				<td>
-					@Html.DisplayFor(model=> item.EmployeeID)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Name)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.LastName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.PersonalID)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Address)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Birthday)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.PhoneNumber)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Email)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.UserName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Password)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.PayCheck)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.IsActive)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.ActiveDate)
-				</td>
-				<td>
-					@*<a href="@Url.Action("Edit","Emloyee",new {id = item.EmployeeID})" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>*@
-					@Html.ActionLink("Edit","Edit", new { id = item.EmployeeID}, new { @class = "btn btn-warning"})
-					<a onclick="Delete(@item.EmployeeID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
-				</td>
-				@*<td>
-						@Html.ActionLink("Edit", "Edit", new { id=item.EmployeeID }) |
-						@Html.ActionLink("Details", "Details", new { id=item.EmployeeID }) |
-						@Html.ActionLink("Delete", "Delete", new { id=item.EmployeeID })
-					</td>*@
-			</tr>
+		<td>
+			@Html.DisplayFor(model => item.EmployeeID)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Name)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.LastName)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PersonalID)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Address)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Birthday)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PhoneNumber)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Email)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.UserName)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.Password)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.PayCheck)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.IsActive)
+		</td>
+		<td>
+			@Html.DisplayFor(modelItem => item.ActiveDate)
+		</td>
+		<td>
+			@*<a href="@Url.Action("Edit","Emloyee",new {id = item.EmployeeID})" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>*@
+			@Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }, new { @class = "btn btn-warning" })
+			<a onclick="Delete(@item.EmployeeID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+		</td>
+		@*<td>
+			@Html.ActionLink("Edit", "Edit", new { id=item.EmployeeID }) |
+			@Html.ActionLink("Details", "Details", new { id=item.EmployeeID }) |
+			@Html.ActionLink("Delete", "Delete", new { id=item.EmployeeID })
+		</td>*@
+	</tr>
 		}
 </table>
 

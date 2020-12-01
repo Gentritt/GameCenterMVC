@@ -45,5 +45,49 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
+
+        public ActionResult Update(int id)
+		{
+
+            return View(ClientDAL.GetByID(id));
+		}
+
+        [HttpPost]
+        public ActionResult Update(int id, Client client)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+                    clientDAL.Modify(client);
+                    return RedirectToAction("Index");
+                   
+				}
+                return View();
+			}
+			catch (Exception)
+			{
+                return View();
+            }
+		}
+        public ActionResult Remove(int id)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+                    clientDAL.Remove(id);
+                    return RedirectToAction("Index");
+                }
+                return View();
+
+
+			}
+			catch (Exception)
+			{
+
+                return View();
+			}
+		}
     }
 }

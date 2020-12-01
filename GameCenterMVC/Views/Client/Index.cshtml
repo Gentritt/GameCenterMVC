@@ -121,7 +121,7 @@
 						@Html.ActionLink("Delete", "Delete", new { id = item.ClientID })
 					</td>*@
 				<td>
-					@Html.ActionLink("Edit", "Edit", new { id = item.ClientID }, new { @class = "btn btn-warning" })
+					@Html.ActionLink("Update", "Update", new { id = item.ClientID }, new { @class = "btn btn-warning" })
 					<a onclick="Delete(@item.ClientID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
 				</td>
 			</tr>
@@ -139,7 +139,7 @@
 
     function Delete(id) {
         alertify.confirm('Warning !!', 'Are You Sure To Delete This Record ?', function () {
-            window.location.href = '@Url.Action("Delete","Client")/' + id;
+            window.location.href = '@Url.Action("Remove","Client")/' + id;
         }, null);
     }
 		</script>

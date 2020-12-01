@@ -715,6 +715,9 @@
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\ComputerParts\Index.cshtml" />
     <Content Include="Views\ComputerParts\Create.cshtml" />
+    <Content Include="Views\Client\Update.cshtml" />
+    <Content Include="Views\Client\Remove.cshtml" />
+    <Content Include="Views\Employe\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

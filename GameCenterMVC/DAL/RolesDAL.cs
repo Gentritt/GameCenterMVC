@@ -8,7 +8,7 @@ using System.Web;
 
 namespace GameCenterMVC.DAL
 {
-	public class RolesDAL : ICrudOperations<Roles>
+	public class RolesDAL:Roles
 	{
 		public int ADD(Roles model)
 		{
@@ -37,7 +37,7 @@ namespace GameCenterMVC.DAL
 			}
 		}
 
-		public List<Roles> GetALL()
+		public static List<Roles> GetALL()
 		{
 			try
 			{

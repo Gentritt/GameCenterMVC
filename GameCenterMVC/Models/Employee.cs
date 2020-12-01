@@ -14,6 +14,7 @@ namespace GameCenterMVC.Models
 		public int EmployeeID { get; set; }
 		[Required(ErrorMessage="Please Enter a Name")]
 		public string Name { get; set; }
+		public string RoleName { get; set; }
 		public virtual Roles Roles { get; set; }
 		[Required(ErrorMessage ="Please enter a LastName")]
 		public string  LastName { get; set; }
@@ -35,7 +36,7 @@ namespace GameCenterMVC.Models
 		[Required(ErrorMessage ="Please Enter Password")]
 		public string Password { get; set; }
 		[NotMapped]
-		[Compare("Password", ErrorMessage ="The passwords are not the same")]
+		//[Compare("Password", ErrorMessage ="The passwords are not the same")]
 		public string ConfirmPassword { get; set; }
 		[Required(ErrorMessage ="Please Enter PayCheck")]
 		public Decimal PayCheck { get; set; }

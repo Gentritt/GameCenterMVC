@@ -14,7 +14,7 @@ namespace GameCenterMVC.Controllers
         RolesDAL rolesDAL = new RolesDAL();
         public ActionResult Index()
         {
-            List<Roles> roles = rolesDAL.GetALL().ToList();
+            List<Roles> roles = RolesDAL.GetALL().ToList();
             ViewBag.Roles = roles;
             return View(roles);
         }
