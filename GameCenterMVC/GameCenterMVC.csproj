@@ -279,6 +279,7 @@
     <Content Include="Content\Images\GamingPC.jpg" />
     <Content Include="Content\Images\Space.jpg" />
     <Content Include="Content\Label.css" />
+    <Content Include="Content\Scripts\DeleteNotify.js" />
     <Content Include="Content\Table.css" />
     <Content Include="DAL\Database\GameCenterScriptMVC.sql" />
     <Content Include="favicon.ico" />

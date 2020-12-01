@@ -1,0 +1,50 @@
+﻿@model GameCenterMVC.Models.Computer
+@{
+	ViewBag.Title = "AddComputer";
+	Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddComputer", "Computer", FormMethod.Post))
+{
+	<div class="container">
+
+		<div class="form-group">
+
+
+			<label>
+				PartID
+			</label>
+			@Html.TextBoxFor(m => m.ComputerPartID, new { @class = "form-control" })
+		</div>
+		<div class="form-group">
+			<label>
+				PricePerHour
+			</label>
+			@Html.TextBoxFor(m => m.PricePerHour, new { @class = "form-control" })
+		</div>
+		<div class="form-group">
+			<label>
+				IsActive
+			</label>
+			@Html.EditorFor(m => m.IsActive)
+		</div>
+		<div class="form-group">
+			<label>
+				InsertBy
+			</label>
+			@Html.TextBoxFor(m => m.InsertBy, new { @class = "form-control" })
+		</div>
+		<div class="form-group">
+			<label>
+				InsertDate
+			</label>
+			@Html.TextBoxFor(m => m.InsertDate, new { @class = "form-control", @Value=DateTime.Now.ToShortDateString()})
+		</div>
+		<div class="form-group">
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="reset" class="btn btn-danger">Reset</button>
+		</div>
+	</div>
+}
+

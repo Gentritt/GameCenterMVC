@@ -5,10 +5,8 @@
 	Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 <link href="~/Content/Table.css" rel="stylesheet" />
-@*<link href="~/Content/TableTest.css" rel="stylesheet" />*@
 <h3>Employee Data Manger</h3>
 <th>
-	@*@Html.ActionLink("Create New", "Create")*@
 	<a href="@Url.Action("Create","Employe")"@*asp-action="Create"*@ class="btn btn-primary text-white"> <i class="fa fa-plus-circle"></i> New Employee</a>
 </th>	
 
@@ -141,7 +139,7 @@
 
     function Delete(id) {
         alertify.confirm('customer Management System', 'Are You Sure To Delete This Record ?', function () {
-            window.location.href = '@Url.Action("Delete","Employee")/' + id;
+            window.location.href = '@Url.Action("Delete","Employe")/' + id;
         }, null);
     }
 	</script>
