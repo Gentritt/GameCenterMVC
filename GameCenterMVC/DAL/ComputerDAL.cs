@@ -205,5 +205,10 @@ namespace GameCenterMVC.DAL
 				return -1;
 			}
 		}
+
+		public List<Computer> Getall()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

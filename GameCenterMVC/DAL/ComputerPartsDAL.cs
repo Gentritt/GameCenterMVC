@@ -9,7 +9,7 @@ using System.Web;
 
 namespace GameCenterMVC.DAL
 {
-	public class ComputerPartsDAL 
+	public class ComputerPartsDAL: ICrudOperations<ComputerParts>
 	{
 
 		public int ADD(ComputerParts model)
@@ -253,6 +253,10 @@ namespace GameCenterMVC.DAL
 				return -1;
 			}
 		}
-	
+
+		public List<ComputerParts> Getall()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

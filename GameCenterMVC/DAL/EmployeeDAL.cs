@@ -259,6 +259,11 @@ namespace GameCenterMVC.DAL
 			}
 
 		}
+
+		public List<Employee> Getall()
+		{
+			throw new NotImplementedException();
+		}
 	}
 
 	//public List<Employee> GetALL()

@@ -12,6 +12,6 @@ namespace GameCenterMVC.Models.Interface
 		int ADD(T model);
 		int Modify(T model);
 		int Remove(int ID);
-		List<T> GetALL();
-	}
-}
+		List<T> Getall();
+		
+}   } 

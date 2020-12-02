@@ -254,5 +254,10 @@ namespace GameCenterMVC.DAL
 			}
 
 		}
+
+		public List<Client> Getall()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
