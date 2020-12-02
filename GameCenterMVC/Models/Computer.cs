@@ -15,7 +15,7 @@ namespace GameCenterMVC.Models
 		public virtual ComputerParts ComputerParts { get; set; }
 
 		[Required(ErrorMessage ="Required!")]
-		[RegularExpression("^[0-9]*$", ErrorMessage = "PricePerHour must be numeric")]
+		//[RegularExpression("^[0-9]*$", ErrorMessage = "PricePerHour must be numeric")]
 		public double PricePerHour { get; set; }
 		public bool IsActive { get; set; }
 

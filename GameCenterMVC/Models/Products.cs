@@ -14,7 +14,7 @@ namespace GameCenterMVC.Models
 		[Required(ErrorMessage = "Please Enter a Name")]
 		public string Name { get; set; }
 		[Required(ErrorMessage = "Please Enter a Price")]
-		[RegularExpression("^[0-9]*$", ErrorMessage = "PricePerHour must be numeric")]
+		//[RegularExpression("^[0-9]*$", ErrorMessage = "PricePerHour must be numeric")]
 		public double Price { get; set; }
 		[Required(ErrorMessage = "Please Enter a Quantity")]
 		[RegularExpression("^[0-9]*$", ErrorMessage = "Quantity must be numeric")]
