@@ -8,10 +8,11 @@ using System.Web.Mvc;
 
 namespace GameCenterMVC.Controllers
 {
-    public class ClientController : Controller
+    public class ClientController : SecureController
     {
         // GET: Client
         ClientDAL clientDAL = new ClientDAL();
+        //[AuthorizedUsers("admin")]
         public ActionResult Index()
         {
             List<Client> clients = clientDAL.GetALL().ToList();

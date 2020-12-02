@@ -6,17 +6,23 @@ using System.Web;
 
 namespace GameCenterMVC.Models
 {
-	public class ValidateUser
+	public class ServiceHelper
 	{
 
 		public bool ValidateUsers(string username, string password)
 		{
 			EmployeeDAL employee = new EmployeeDAL();
-			if  (employee.GetALL().Any(c => c.UserName == username && c.Password == password))
+			if (employee.GetALL().Any(c => c.UserName.Equals(username) && c.Password.Equals(password)))
 				return true;
 				
 			else
 				return false;
+		}
+
+		public Employee GetUsers(string user)
+		{
+			EmployeeDAL employeeDAL = new EmployeeDAL();
+			return employeeDAL.GetALL().Where(x => x.UserName.Equals(user)).FirstOrDefault();
 		}
 	}
 }

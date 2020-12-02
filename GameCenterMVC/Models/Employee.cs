@@ -30,7 +30,7 @@ namespace GameCenterMVC.Models
 		public DateTime Birthday { get; set; }
 		[Required(ErrorMessage ="Please Enter PhoneNumber")]
 		[DataType(DataType.PhoneNumber)]
-		[RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+		[RegularExpression(@"^[0-9]{9,15}$", ErrorMessage = "Please enter a valid phone number")]
 		public string PhoneNumber { get; set; }
 		[Required(ErrorMessage ="Please Enter Email")]
 		[EmailAddress(ErrorMessage = "Invalid Email")]

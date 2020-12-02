@@ -19,5 +19,11 @@ namespace GameCenterMVC.Models
 			ClientDAL clientDAL = new ClientDAL();
 			return clientDAL.GetALL().Any(x => x.Username == username);
 		}
+
+		public bool ExitsRole(string name)
+		{
+
+			return RolesDAL.GetALL().Any(x => x.Name == name);
+		}
 	}
 }

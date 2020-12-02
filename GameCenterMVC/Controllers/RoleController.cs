@@ -27,9 +27,11 @@ namespace GameCenterMVC.Controllers
         [HttpPost]
         public ActionResult Create(Roles roles)
         {
-            
+            ValidationsExists validationsExists = new ValidationsExists();
             try
             {
+                if (validationsExists.ExitsRole(roles.Name))
+                    ModelState.AddModelError("", "This Role Exits");
                 if (ModelState.IsValid)
                 {
                     rolesDAL.ADD(roles);

@@ -18,20 +18,19 @@ namespace GameCenterMVC.Controllers
 
         public ActionResult Login ()
 		{
-            Login login = new Login();
-            return View(login);
+            return View();
 		}
         [HttpPost]
         public ActionResult Login(Login objLogin)
 		{
-            ValidateUser validateUser = new ValidateUser();
+            ServiceHelper validateUser = new ServiceHelper();
 			if (ModelState.IsValid)
 			{
 
                 if(validateUser.ValidateUsers(objLogin.Username, objLogin.Password))
 				{
                     FormsAuthentication.SetAuthCookie(objLogin.Username, false);
-                    Session["Username"] = objLogin.Username;
+                    Session["Username"] = objLogin.Username;    
                     return RedirectToAction("Index", "DashBoard");
 				}
                  ModelState.AddModelError("Error", "Invalid Username Or Password");
