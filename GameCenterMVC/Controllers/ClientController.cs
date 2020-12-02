@@ -58,8 +58,11 @@ namespace GameCenterMVC.Controllers
         [HttpPost]
         public ActionResult Update(int id, Client client)
 		{
+            ValidationsExists validationsExists = new ValidationsExists();
 			try
 			{
+                if (validationsExists.ExitsMember(client.Username))
+                    ModelState.AddModelError("", "The username Already Exists");
 				if (ModelState.IsValid)
 				{
                     clientDAL.Modify(client);

@@ -11,8 +11,9 @@
 	<a href="@Url.Action("Create","Computer")" @*asp-action="Create"*@ class="btn btn-primary text-white"> <i class="fa fa-plus-circle"></i> New Computer</a>
 </th>
 
-<table class="table">
-    <tr>
+<table class="container">
+    <thead>
+    <tr class="header">
         <!--<th>
         @Html.DisplayNameFor(model => model.InsertBy)
     </th>
@@ -31,9 +32,9 @@
         <th>
             @Html.DisplayNameFor(model => model.PricePerHour)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.IsActive)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -58,9 +59,9 @@
     <td>
         @Html.DisplayFor(modelItem => item.PricePerHour)
     </td>
-    <td>
+    @*<td>
         @Html.DisplayFor(modelItem => item.IsActive)
-    </td>
+    </td>*@
     @*<td>
             @Html.ActionLink("Edit", "Edit", new { id = item.ComputerID }) |
             @Html.ActionLink("Details", "Details", new { id = item.ComputerID }) |

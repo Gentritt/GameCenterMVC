@@ -62,12 +62,12 @@
 			<th>
 				@Html.DisplayNameFor(model => model.PayCheck)
 			</th>
-			<th>
+			@*<th>
 				@Html.DisplayNameFor(model => model.IsActive)
 			</th>
 			<th>
 				@Html.DisplayNameFor(model => model.ActiveDate)
-			</th>
+			</th>*@
 				
 		</tr>
 			
@@ -108,12 +108,12 @@
 		<td>
 			@Html.DisplayFor(modelItem => item.PayCheck)
 		</td>
-		<td>
+		@*<td>
 			@Html.DisplayFor(modelItem => item.IsActive)
 		</td>
 		<td>
 			@Html.DisplayFor(modelItem => item.ActiveDate)
-		</td>
+		</td>*@
 		<td>
 			@*<a href="@Url.Action("Edit","Emloyee",new {id = item.EmployeeID})" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>*@
 			@Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }, new { @class = "btn btn-warning" })
