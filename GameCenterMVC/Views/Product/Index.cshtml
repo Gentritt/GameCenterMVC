@@ -1,88 +1,138 @@
 ﻿@model IEnumerable<GameCenterMVC.Models.Products>
+@using GameCenterMVC.Models
 
 @{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
+@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+@*<h2>Manage Products</h2>
 
-<h2>Manage Products</h2>
+	<th>
+		<a href="@Url.Action("Create","Product")" asp-action="Create" class="btn btn-primary text-white"> <i class="fa fa-plus-circle"></i> New Product</a>
+	</th>
+	<table class="table table-striped>
+		<thead>
 
-<th>
-	<a href="@Url.Action("Create","Product")" @*asp-action="Create"*@ class="btn btn-primary text-white"> <i class="fa fa-plus-circle"></i> New Product</a>
-</th>
-<table class="table
-       <thead>
-    <tr class="header">
-        <!--<th>
-        @Html.DisplayNameFor(model => model.InsertBy)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.InsertDate)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.UpdateBy)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.UpdateDate)
-    </th>-->
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th></th>
-    </tr>
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.Name)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Price)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Quantity)
+				</th>
 
-    @foreach (var item in Model)
-    {
-	   <tr>
-	   	<!--<td>
-		@Html.DisplayFor(modelItem => item.InsertBy)
-	</td>
-	<td>
-		@Html.DisplayFor(modelItem => item.InsertDate)
-	</td>
-	<td>
-		@Html.DisplayFor(modelItem => item.UpdateBy)
-	</td>
-	<td>
-		@Html.DisplayFor(modelItem => item.UpdateDate)
-	</td>-->
-	   	<td>
-	   		@Html.DisplayFor(modelItem => item.Name)
-	   </td>
-	   <td>
-	   	@Html.DisplayFor(modelItem => item.Price)
-	   </td>
-	   <td>
-	   	@Html.DisplayFor(modelItem => item.Quantity)
-	   </td>
-	   <td>
-	   	@Html.ActionLink("Update", "Update", new { id = item.ProductID }, new { @class = "btn btn-warning" })
-	   <a onclick="Delete(@item.ProductID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
-	   </td>
-	   </tr>
-    }
+			</tr>
+		</thead>
 
-</table>
+		@foreach (var item in Model)
+		{
+			<tbody>
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.InsertBy)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.InsertDate)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.UpdateBy)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.UpdateDate)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Name)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Price)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Quantity)
+					</td>
+					<td>
+						@Html.ActionLink("Update", "Update", new { id = item.ProductID }, new { @class = "btn btn-warning" })
+						<a onclick="Delete(@item.ProductID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		}
+
+	</table>*@
+
+
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+	<div class="panel-heading panel-head">Products</div>
+	<div class="panel-body">
+		<div class="btn-group">
+			<a href="@Url.Action("Create","Product")" , class="btn btn-primary">
+				<i class="glyphicon glyphicon-plus"></i>  Add Product
+			</a>
+		</div>
+		<div class="top-buffer"></div>
+		<table class="table table-bordered table-striped table-condensed alert-dark">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Name</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				@if (Model.Count() > 0)
+				{
+					foreach (var item in Model)
+					{
+						<tr>
+							<td>@Html.DisplayFor(modelItem => item.ProductID)</td>
+							<td>@Html.DisplayFor(modelItem => item.Price)</td>
+							<td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+							<td>@Html.DisplayFor(modelItem => item.Name)</td>
+							<td>
+								<a href="@Url.Action("Update", "Product", new { id = item.ProductID })"
+								   class="btn btn-info">
+									<i class="glyphicon glyphicon-pencil"></i>  Edit
+								</a>
+								<a onclick="Delete(@item.ProductID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+								@*<i class="glyphicon glyphicon-trash"></i>  Delete*@
+
+							</td>
+						</tr>
+					}
+
+
+				}
+				else
+				{
+					<h2>No Data</h2>
+				}
+				</tbody>
+		</table>
+	</div>
+</div>
+@*@Html.Partial("_Modal", new BootstrapModel { ID = "modal-action-student", AreaLabeledId = "modal-action-student-label", Size = ModalSize.Medium })*@
+
+
 @section scripts{
 	<script>
-    $(function () {
-        var SuccessMessage = '["Success"]'
-        if (SuccessMessage != '')
-            alertify.success(SuccessMessage);
+		$(function () {
+			var SuccessMessage = 'Success'
+			if (SuccessMessage != '')
+				alertify.success(SuccessMessage);
 
-    });
+		});
 
-    function Delete(id) {
-        alertify.confirm('Warning !!', 'Are You Sure To Delete This Record ?', function () {
-            window.location.href = '@Url.Action("Remove","Product")/' + id;
-        }, null);
-    }
+		function Delete(id) {
+			alertify.confirm('Warning !!', 'Are You Sure To Delete This Record ?', function () {
+				window.location.href = '@Url.Action("Remove","Product")/' + id;
+			}, null);
+		}
 	</script>
 
 }

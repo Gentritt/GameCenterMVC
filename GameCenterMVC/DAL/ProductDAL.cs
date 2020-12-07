@@ -67,7 +67,6 @@ namespace GameCenterMVC.DAL
 								{
 
 									Products product = new Products();
-
 									product.ProductID = int.Parse(reader["ProductID"].ToString());
 									product.Name = reader["ProductName"].ToString();
 									product.Price = double.Parse(reader["ProductPrice"].ToString());
@@ -80,8 +79,8 @@ namespace GameCenterMVC.DAL
 										product.UpdateBy = reader["UpdateBy"].ToString();
 									if (reader["UpdateDate"] != DBNull.Value)
 										product.UpdateDate = DateTime.Parse(reader["UpdateDate"].ToString());
+										products.Add(product);
 
-									products.Add(product);
 
 								}
 							}

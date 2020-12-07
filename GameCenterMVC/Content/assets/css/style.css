@@ -33,11 +33,13 @@
   transition: all 0.3s ease; }
 
 body {
-  background: #f1f2f7;
-  display: table;
-  font-family: 'Open Sans' sans-serif;
-  font-size: 16px;
-  width: 100%; }
+    /*  background: #f1f2f7;*/
+    background: #868e96;
+    display: table;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 16px;
+    width: 100%;
+}
 
 div[class*="col-"] {
   float: left; }
@@ -366,7 +368,7 @@ header.fixed-top {
   background: #fff;
   padding: 20px; }
 
-.header-menu .col-sm-7 {
+.header-menu .col-sm-12 {
   position: inherit; }
 
 .menutoggle {

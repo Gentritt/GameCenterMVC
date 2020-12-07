@@ -10,13 +10,16 @@ namespace GameCenterMVC.Controllers
 {
     public class ProductController : Controller
     {
+        Products products = new Products();
         // GET: Product
         ProductDAL productDAL = new ProductDAL();
         public ActionResult Index()
         {
-            List<Products> products = productDAL.GetALL().ToList();
-            ViewBag.Products = products;
-            return View(products);
+		
+          List<Products> products = productDAL.GetALL().ToList();
+          return View(products);
+
+			//ViewBag.Products = products;
         }
         // GET: Product/Create
         public ActionResult Create()

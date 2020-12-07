@@ -17,6 +17,7 @@
 @import "widgets";
 @import "../css/animate.css";
 
+
 .bg-flat-color-1 {background: #20a8d8};
 .bg-flat-color-2 {background: #63c2de};
 .bg-flat-color-3 {background: #ffc107};
@@ -33,7 +34,9 @@
 }
 
 body {
-    background: $container-bg;
+    /* background: $container-bg;*/
+/*    background: $white;*/
+    background-color:#fff;
     display: table;
     font-family: 'Open Sans' sans-serif !important;
     font-size: 16px;
