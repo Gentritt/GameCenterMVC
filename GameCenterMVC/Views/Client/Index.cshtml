@@ -6,11 +6,11 @@
 }
 <link href="~/Content/Table.css" rel="stylesheet" />
 <h2>Manage Members </h2>
-<th>
-	<a href="@Url.Action("Create","Client")" @*asp-action="Create"*@ class="btn btn-primary text-white"> <i class="fa fa-plus-circle"></i> New Member</a>
-	@*</th>
+@*<th>
+	<a href="@Url.Action("Create","Client")" asp-action="Create" class="btn btn-primary text-white"> <i class="fa fa-plus-circle"></i> New Member</a>
+	</th>
 		.Action("Create","Client")" asp-action="Create" class="btn btn-primary text-white"> <i class="fa fa-plus-circle"></i> New Member</a>
-		</th>*@
+		</th>
 	@if (Model.Count() == 0)
 	{
 		<h2>No Data</h2>
@@ -20,18 +20,18 @@
 		<table class="table">
 			<tr>
 				<th> @Html.DisplayNameFor(model => model.ClientID)</th>
-				<!--<th>
+				<th>
 					@Html.DisplayNameFor(model => model.InsertBy)
 				</th>
 				<th>
 					@Html.DisplayNameFor(model => model.InsertDate)
-				</th>-->
-				<!--<th>
+				</th>
+				<th>
 					@Html.DisplayNameFor(model => model.UpdateBy)
 				</th>
 				<th>
 					@Html.DisplayNameFor(model => model.UpdateDate)
-				</th>-->
+				</th>
 				<th>
 					@Html.DisplayNameFor(model => model.Name)
 				</th>
@@ -62,12 +62,12 @@
 				<th>
 					@Html.DisplayNameFor(model => model.Balance)
 				</th>
-				@*<th>
+				<th>
 						@Html.DisplayNameFor(model => model.IsActive)
 					</th>
 					<th>
 						@Html.DisplayNameFor(model => model.ActiveDate)
-					</th>*@
+					</th>
 				<th></th>
 			</tr>
 
@@ -77,18 +77,18 @@
 					<td>
 						@Html.DisplayFor(model => item.ClientID)
 					</td>
-					<!--<td>
+					<td>
 						@Html.DisplayFor(modelItem => item.InsertBy)
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.InsertDate)
-					</td>-->
-					<!--<td>
+					</td>
+					<td>
 						@Html.DisplayFor(modelItem => item.UpdateBy)
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.UpdateDate)
-					</td>-->
+					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.Name)
 					</td>
@@ -119,17 +119,17 @@
 					<td>
 						@Html.DisplayFor(modelItem => item.Balance)
 					</td>
-					@*<td>
+					<td>
 							@Html.DisplayFor(modelItem => item.IsActive)
 						</td>
 						<td>
 							@Html.DisplayFor(modelItem => item.ActiveDate)
-						</td>*@
-					@*<td>
+						</td>
+					<td>
 							@Html.ActionLink("Edit", "Edit", new { id = item.ClientID }) |
 							@Html.ActionLink("Details", "Details", new { id = item.ClientID }) |
 							@Html.ActionLink("Delete", "Delete", new { id = item.ClientID })
-						</td>*@
+						</td>
 					<td>
 						@Html.ActionLink("Update", "Update", new { id = item.ClientID }, new { @class = "btn btn-warning" })
 						<a onclick="Delete(@item.ClientID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
@@ -137,14 +137,79 @@
 				</tr>
 			}
 
+		</table>*@
+	<div class="top-buffer"></div>
+<div class="panel panel-primary">
+	<div class="panel-heading panel-head"></div>
+	<div class="panel-body">
+		<div class="btn-group">
+			<a href="@Url.Action("Create","Client")" , class="btn btn-primary">
+				<i class="glyphicon glyphicon-plus"></i>  Add Member
+			</a>
+		</div>
+		<div class="top-buffer"></div>
+		<table class="table table-bordered table-striped table-condensed alert-dark">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Lastname</th>
+					<th>PersonalID</th>
+					<th>Address</th>
+					<th>Birthday</th>
+					<th>PhoneNumber</th>
+					<th>Email</th>
+					<th>Username</th>
+					<th>Password</th>
+					<th>Balance</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				@if (Model.Count() > 0)
+				{
+					foreach (var item in Model)
+					{
+						<tr>
+							<td>@Html.DisplayFor(modelItem => item.ClientID)</td>
+							<td>@Html.DisplayFor(modelItem => item.Name)</td>
+							<td>@Html.DisplayFor(modelItem => item.LastName)</td>
+							<td>@Html.DisplayFor(modelItem => item.PersonalID)</td>
+							<td>@Html.DisplayFor(modelItem => item.Address)</td>
+							<td>@Html.DisplayFor(modelItem => item.Birthday)</td>
+							<td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+							<td>@Html.DisplayFor(modelItem => item.Email)</td>
+							<td>@Html.DisplayFor(modelItem => item.Username)</td>
+							<td>@Html.DisplayFor(modelItem => item.Password)</td>
+							<td>@Html.DisplayFor(modelItem => item.Balance)</td>
+							<td>
+								<a href="@Url.Action("Update", "Client", new { id = item.ClientID }) "
+								   class="btn btn-info">
+									<i class="fa fa-edit"></i>  Edit
+								</a>
+								<a onclick="Delete(@item.ClientID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+								@*<i class="glyphicon glyphicon-trash"></i>  Delete*@
+
+							</td>
+						</tr>
+					}
+
+
+				}
+				else
+				{
+					<h2>No Data</h2>
+				}
+			</tbody>
 		</table>
-	}
+	</div>
+</div>
 
 
-	@section scripts{
-		<script>
+@section scripts{
+	<script>
     $(function () {
-        var SuccessMessage = '["Success"]'
+        var SuccessMessage = 'Success'
         if (SuccessMessage != '')
             alertify.success(SuccessMessage);
 
@@ -155,6 +220,6 @@
             window.location.href = '@Url.Action("Remove","Client")/' + id;
         }, null);
     }
-		</script>
+	</script>
 
-	}
+}

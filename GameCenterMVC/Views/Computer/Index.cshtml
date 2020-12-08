@@ -5,87 +5,63 @@
 	Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 
-<link href="~/Content/Table.css" rel="stylesheet" />
-<h3>Employee Data Manger</h3>
-<th>
-	<a href="@Url.Action("Create","Computer")" @*asp-action="Create"*@ class="btn btn-primary text-white"> <i class="fa fa-plus-circle"></i> New Computer</a>
-</th>
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+	<div class="panel-heading panel-head">Manage Computers</div>
+	<div class="panel-body">
+		<div class="btn-group">
+			<a href="@Url.Action("Create","Computer")" , class="btn btn-primary">
+				<i class="fa fa-plus-circle"></i> Add Computer
+			</a>
+		</div>
+		<div class="top-buffer"></div>
+		<table class="table table-bordered table-striped table-condensed alert-dark">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>PartID</th>
+					<th>PricePerHour</th>
+				</tr>
+			</thead>
+			<tbody>
 
-<table class="container">
-    <thead>
-    <tr class="header">
-        <!--<th>
-        @Html.DisplayNameFor(model => model.InsertBy)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.InsertDate)
-    </th>-->
-        <!--<th>
-        @Html.DisplayNameFor(model => model.UpdateBy)
-    </th>
-    <th>
-        @Html.DisplayNameFor(model => model.UpdateDate)
-    </th>-->
-        <th>
-            @Html.DisplayNameFor(model => model.ComputerPartID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PricePerHour)
-        </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.IsActive)
-        </th>*@
-        <th></th>
-    </tr>
+				@if (Model.Count() > 0)
+				{
+					foreach (var item in Model)
+					{
+						<tr>
+							<td>@Html.DisplayFor(modelItem => item.ComputerID)</td>
+							<td>@Html.DisplayFor(modelItem => item.ComputerPartID)</td>
+							<td>@Html.DisplayFor(modelItem => item.PricePerHour)</td>
+							<td>
+								<a href="@Url.Action("Update", "Computer", new { id = item.ComputerID })"
+								   class="btn btn-info">
+									<i class="fa fa-edit"></i>  Edit
+								</a>
+								<a onclick="Delete(@item.ComputerID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+								@*<i class="glyphicon glyphicon-trash"></i>  Delete*@
 
-	@foreach (var item in Model)
-	{
-<tr>
-    <!--<td>
-        @Html.DisplayFor(modelItem => item.InsertBy)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.InsertDate)
-    </td>-->
-    <!--<td>
-        @Html.DisplayFor(modelItem => item.UpdateBy)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.UpdateDate)
-    </td>-->
-    <td>
-        @Html.DisplayFor(modelItem => item.ComputerPartID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PricePerHour)
-    </td>
-    @*<td>
-        @Html.DisplayFor(modelItem => item.IsActive)
-    </td>*@
-    @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ComputerID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ComputerID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ComputerID })
-        </td>*@
+							</td>
+						</tr>
+					}
 
-    <td>
-        @*<a href="@Url.Action("Edit","Emloyee",new {id = item.EmployeeID})" class="btn btn-info"><i class="fa fa-pencil"></i>Edit</a>*@
-        @Html.ActionLink("Update", "Update", new { id = item.ComputerID }, new { @class = "btn btn-warning" })
-        <a onclick="Delete(@item.ComputerID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
 
-    </td>
-</tr>
-
-	}
-
-</table>
+				}
+				else
+				{
+					<h2>No Data</h2>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
 
 @section Scripts{
 
 
 	<script>
         $(function () {
-        var SuccessMessage = '["Success"]'
+        var SuccessMessage = 'Success'
         if (SuccessMessage != '')
             alertify.success(SuccessMessage);
 
