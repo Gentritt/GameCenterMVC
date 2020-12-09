@@ -7,71 +7,73 @@
 
 <div class="top-buffer"></div>
 <div class="panel panel-primary">
-	<div class="panel-heading panel-head">Products</div>
-	<div class="panel-body">
-		<div class="btn-group">
-			<a href="@Url.Action("Create","Employe")" , class="btn btn-primary">
-				<i class="fa fa-plus-circle"></i>  Add Employe
-			</a>
-		</div>
-		<div class="top-buffer"></div>
-		<table class="table table-bordered table-striped table-condensed alert-dark">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Name</th>
-					<th>Lastname</th>
-					<th>PersonalID</th>
-					<th>Adress</th>
-					<th>Birthday</th>
-					<th>Phonenumber</th>
-					<th>Email</th>
-					<th>Username</th>
-					<th>Password</th>
-					<th>Paycheck</th>
-					<th>RoleID</th>
-				</tr>
-			</thead>
-			<tbody>
+    <h2>Manage Employees</h2>
+    <hr />
+    <div class="panel-body">
+        <div class="btn-group">
+            <a href="@Url.Action("Create","Employe")" , class="btn btn-primary">
+                <i class="fa fa-plus-circle"></i>  Add Employe
+            </a>
+        </div>
+        <hr />
+        <div class="top-buffer"></div>
+        <table class="table table-bordered table-striped table-condensed alert-dark">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>PersonalID</th>
+                    <th>Adress</th>
+                    <th>Birthday</th>
+                    <th>Phonenumber</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Paycheck</th>
+                    <th>RoleID</th>
+                </tr>
+            </thead>
+            <tbody>
 
-				@if (Model.Count() > 0)
-				{
-					foreach (var item in Model)
-					{
-						<tr>
-							<td>@Html.DisplayFor(modelItem => item.EmployeeID)</td>
-							<td>@Html.DisplayFor(modelItem => item.Name)</td>
-							<td>@Html.DisplayFor(modelItem => item.LastName)</td>
-							<td>@Html.DisplayFor(modelItem => item.PersonalID)</td>
-							<td>@Html.DisplayFor(modelItem => item.Address)</td>
-							<td>@Html.DisplayFor(modelItem => item.Birthday)</td>
-							<td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
-							<td>@Html.DisplayFor(modelItem => item.Email)</td>
-							<td>@Html.DisplayFor(modelItem => item.UserName)</td>
-							<td>@Html.DisplayFor(modelItem => item.Password)</td>
-							<td>@Html.DisplayFor(modelItem => item.PayCheck)</td>
-							<td>@Html.DisplayFor(modelItem => item.RoleID)</td>
-							<td>
-								<a href="@Url.Action("Edit", "Employe", new { id = item.EmployeeID })"
-								   class="btn btn-info">
-									<i class="fa fa-edit"></i>  Edit
-								</a>
-								<a onclick="Delete(@item.EmployeeID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
-								@*<i class="glyphicon glyphicon-trash"></i>  Delete*@
+                @if (Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.EmployeeID)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PersonalID)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Birthday)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Password)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PayCheck)</td>
+                            <td>@Html.DisplayFor(modelItem => item.RoleID)</td>
+                            <td>
+                                <a href="@Url.Action("Edit", "Employe", new { id = item.EmployeeID })"
+                                   class="btn btn-info">
+                                    <i class="fa fa-edit"></i>  Edit
+                                </a>
+                                <a onclick="Delete(@item.EmployeeID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+                                @*<i class="glyphicon glyphicon-trash"></i>  Delete*@
 
-							</td>
-						</tr>
-					}
+                            </td>
+                        </tr>
+                    }
 
 
-				}
-				else
-				{
-					<h2>No Data</h2>
-				}
-			</tbody>
-		</table>
-	</div>
+                }
+                else
+                {
+                    <h2>No Data</h2>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
 
 @section scripts{

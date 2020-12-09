@@ -12,7 +12,7 @@ namespace GameCenterMVC.Controllers
     {
         // GET: Employe
         EmployeeDAL employeeDAL = new EmployeeDAL();
-        [AuthorizedUsers("manager")]
+        //[AuthorizedUsers("manager")]
         public ActionResult Index()
         {
             EmployeeDAL employee = new EmployeeDAL();
