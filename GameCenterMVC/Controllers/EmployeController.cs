@@ -12,6 +12,7 @@ namespace GameCenterMVC.Controllers
     {
         // GET: Employe
         EmployeeDAL employeeDAL = new EmployeeDAL();
+        [AuthorizedUsers("manager")]
         public ActionResult Index()
         {
             EmployeeDAL employee = new EmployeeDAL();
@@ -45,7 +46,7 @@ namespace GameCenterMVC.Controllers
             ValidationsExists validations = new ValidationsExists();
             EmployeeDAL employeeDAL = new EmployeeDAL();
             if (validations.ExitsEmployee(employee.UserName))
-                ModelState.AddModelError("", "Please Try Another Username, this one Exists !");
+                ModelState.AddModelError("UserName", "Please Try Another Username, this one Exists !");
             try
 			{
 				if (ModelState.IsValid)

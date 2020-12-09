@@ -9,10 +9,10 @@ namespace GameCenterMVC.Models
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
 	public class AuthorizedUsers:AuthorizeAttribute
 	{
-		private readonly string[] AllowedUsers;
-		public AuthorizedUsers(params string[] users)
+		private readonly string[] AllowedRoles;
+		public AuthorizedUsers(params string[] roles)
 		{
-			this.AllowedUsers = users;
+			this.AllowedRoles = roles;
 		}
 		protected override bool AuthorizeCore(HttpContextBase httpContext)
 		{
@@ -22,12 +22,12 @@ namespace GameCenterMVC.Models
 			string getusers = httpContext.User.Identity.Name;
 			if (httpContext.User.Identity.IsAuthenticated)
 			{
-				if (AllowedUsers.Count() > 0)
+				if (AllowedRoles.Count() > 0)
 				{
-					var dbUser = securityService.GetUsers(getusers);
-					foreach (var user in AllowedUsers)
+					var dbUser = securityService.GetRoles(getusers);
+					foreach (var role in AllowedRoles)
 					{
-						if (dbUser.UserName.Equals(user))
+						if (dbUser.Name.Equals(role))
 							authorize = true;
 
 
