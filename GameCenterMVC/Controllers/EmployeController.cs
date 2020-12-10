@@ -10,10 +10,9 @@ namespace GameCenterMVC.Controllers
 {
     public class EmployeController : Controller
     {
-        // GET: Employe
         EmployeeDAL employeeDAL = new EmployeeDAL();
-        //[AuthorizedUsers("manager")]
-        public ActionResult Index()
+        [AuthorizedUsers("admin")]
+		public ActionResult Index()
         {
             EmployeeDAL employee = new EmployeeDAL();
             List<Employee> employees = employee.GetALL().ToList();
@@ -27,19 +26,11 @@ namespace GameCenterMVC.Controllers
 		//	return View(employees);
 
 		//}
-		// GET: Employe/Details/5
-		public ActionResult Details(int id)
-        {
-            return View();
-        }
 
-        // GET: Employe/Create
         public ActionResult Create()
         {
             return View();
         }
-
-        // POST: Employe/Create
         [HttpPost]
         public ActionResult Create(Employee employee)
         {
@@ -65,13 +56,11 @@ namespace GameCenterMVC.Controllers
 			}
         }
 
-        // GET: Employe/Edit/5
         public ActionResult Edit(int id)
         {
             return View(EmployeeDAL.GetByID(id));
         }
 
-        // POST: Employe/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, Employee collection)
         {
@@ -92,8 +81,6 @@ namespace GameCenterMVC.Controllers
             }
         }
 
-        // GET: Employe/Delete/5
-
 
 
         public ActionResult Delete(int id)
@@ -113,10 +100,12 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
+        public ActionResult Details(int id)
+		{
 
-  //      public ActionResult getdata()
-		//{
-  //          //return Json(new { data = data }, JsonRequestBehavior.AllowGet);
-		//}
+            Employee employee = EmployeeDAL.GetByID(id);
+            return PartialView("Details", employee);
+		}
     }
+
 }

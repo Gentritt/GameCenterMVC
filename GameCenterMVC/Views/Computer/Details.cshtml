@@ -1,0 +1,33 @@
+﻿@model GameCenterMVC.Models.Computer
+
+<div class="modal-header bg-info">
+	@*<button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+		</button>*@
+	<h4 class="modal-title">Details Record</h4>
+</div>
+<div class="modal-body bg-light">
+	<div>
+		<table class="table table-bordered bg-light">
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.ComputerID)</td>
+				<td>@Html.DisplayFor(model => model.ComputerID)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.ComputerPartID)</td>
+				<td>@Html.DisplayFor(model => model.ComputerPartID)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.PricePerHour)</td>
+				<td>@Html.DisplayFor(model => model.PricePerHour)</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="modal-footer btn-group-toggle">
+	<button type="button" class="btn btn-danger"
+			data-dismiss="modal">
+		Close
+	</button>
+</div>
+

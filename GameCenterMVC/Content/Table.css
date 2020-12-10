@@ -25,7 +25,7 @@ td + td {
 
 td {
 	border-bottom: 1px solid #eee;
-	background: mintcream;
+	background: mint;
 	color: #000;
 	padding: 0px;
 	width: calc (100% / 6);
@@ -33,7 +33,7 @@ td {
 .table-title {
 	padding-bottom: 15px;
 	background: linear-gradient(40deg, #2096ff, #05ffa3) !important;
-	color: #fff;
+	color: #000;
 	padding: 16px 30px;
 	margin: -20px -25px 10px;
 	border-radius: 1px 1px 0 0;

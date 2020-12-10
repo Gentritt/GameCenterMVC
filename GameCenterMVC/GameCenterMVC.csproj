@@ -150,6 +150,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Interfaces\ICrudOperations.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\MyRoleProvider.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Roles.cs" />
@@ -283,8 +284,10 @@
     <Content Include="Content\Images\GamingPC.jpg" />
     <Content Include="Content\Images\Space.jpg" />
     <Content Include="Content\Label.css" />
+    <Content Include="Content\Modal\Modal.css" />
     <Content Include="Content\Scripts\DeleteNotify.js" />
     <Content Include="Content\Table.css" />
+    <Content Include="Content\Table\TableSpacing.css" />
     <Content Include="DAL\Database\dbUpdate.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -292,8 +295,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\alertify.js" />
     <Content Include="Scripts\alertify.min.js" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Computer\Computer.js" />
+    <Content Include="Scripts\Computer\DeleteComputer.js" />
     <Content Include="Scripts\DeleteScript\Delete.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
@@ -609,6 +616,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\LoginCSS\Login.css" />
+    <Content Include="Scripts\Modal\ResetModal.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -733,6 +741,12 @@
     <Content Include="Views\Role\Remove.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
     <Content Include="Views\Product\AddorEdit.cshtml" />
+    <Content Include="Views\Computer\ComputerPartialView.cshtml" />
+    <Content Include="Views\Computer\Details.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Client\Details.cshtml" />
+    <Content Include="Views\Employe\Details.cshtml" />
+    <Content Include="Views\ComputerParts\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

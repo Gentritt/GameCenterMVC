@@ -8,7 +8,6 @@ namespace GameCenterMVC.Models
 {
 	public class ServiceHelper
 	{
-
 		public bool ValidateUsers(string username, string password)
 		{
 			EmployeeDAL employee = new EmployeeDAL();
@@ -18,13 +17,12 @@ namespace GameCenterMVC.Models
 			else
 				return false;
 		}
-
 		public Employee GetUsers(string user)
 		{
 			EmployeeDAL employeeDAL = new EmployeeDAL();
 			return employeeDAL.GetALL().Where(x => x.UserName.Equals(user)).FirstOrDefault();
 		}
-		public Roles GetRoles( string role)
+		public Roles GetRoles(string role)
 		{
 			RolesDAL rolesDAL = new RolesDAL();
 			return RolesDAL.GetALL().Where(x => x.Name.Equals(role)).FirstOrDefault();

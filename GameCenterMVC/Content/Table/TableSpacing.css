@@ -1,0 +1,8 @@
+﻿table {
+	border-collapse: collapse; /* 'cellspacing' equivalent */
+}
+
+	table td,
+	table th {
+		padding: 0; /* 'cellpadding' equivalent */
+	}

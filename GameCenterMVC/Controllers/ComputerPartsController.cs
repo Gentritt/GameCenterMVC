@@ -10,7 +10,6 @@ namespace GameCenterMVC.Controllers
 {
     public class ComputerPartsController : Controller
     {
-        // GET: ComputerParts
         ComputerPartsDAL computerPartsDAL = new ComputerPartsDAL();
         public ActionResult Index()
         {
@@ -18,13 +17,11 @@ namespace GameCenterMVC.Controllers
             ViewBag.ComputerParts = pcParts;
             return View(pcParts);
         }
-        // GET: ComputerParts/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: ComputerParts/Create
         [HttpPost]
         public ActionResult Create(ComputerParts pcParts)
         {
@@ -85,6 +82,12 @@ namespace GameCenterMVC.Controllers
 
                 return View();
 			}
+		}
+
+        public ActionResult Details(int id)
+		{
+            ComputerParts parts = ComputerPartsDAL.GetByID(id);
+            return PartialView("Details", parts);
 		}
     }
     

@@ -84,5 +84,17 @@ namespace GameCenterMVC.Controllers
                 return View();
 			}
 		}
+        [HttpGet]
+        public ActionResult Details(int id)
+		{
+            Computer computer = ComputerDAL.getPcByID(id);
+            if(computer == null)
+			{
+                return HttpNotFound();
+
+			}
+            return PartialView("Details", computer);
+			
+		}
     }
 }

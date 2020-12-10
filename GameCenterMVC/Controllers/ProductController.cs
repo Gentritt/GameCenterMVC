@@ -11,7 +11,6 @@ namespace GameCenterMVC.Controllers
     public class ProductController : Controller
     {
         Products products = new Products();
-        // GET: Product
         ProductDAL productDAL = new ProductDAL();
         public ActionResult Index()
         {
@@ -21,13 +20,11 @@ namespace GameCenterMVC.Controllers
 
 			//ViewBag.Products = products;
         }
-        // GET: Product/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Product/Create
         [HttpPost]
         public ActionResult Create(Products product)
         {
@@ -90,6 +87,11 @@ namespace GameCenterMVC.Controllers
 
                 return View();
 			}
+		}
+        public ActionResult Details(int id)
+		{
+            Products products = ProductDAL.getByID(id);
+            return PartialView("Details", products);
 		}
     }
 }

@@ -10,12 +10,7 @@ namespace GameCenterMVC.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+       
         public ActionResult Login ()
 		{
             return View();
@@ -30,7 +25,7 @@ namespace GameCenterMVC.Controllers
                 if(validateUser.ValidateUsers(objLogin.Username, objLogin.Password))
 				{
                     FormsAuthentication.SetAuthCookie(objLogin.Username, false);
-                    Session["Username"] = objLogin.Username;    
+                    Session["Username"] = objLogin.Username;
                     return RedirectToAction("Index", "DashBoard");
 				}
                  ModelState.AddModelError("Error", "Invalid Username Or Password");

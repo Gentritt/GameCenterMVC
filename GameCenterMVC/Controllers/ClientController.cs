@@ -10,7 +10,6 @@ namespace GameCenterMVC.Controllers
 {
     public class ClientController : SecureController
     {
-        // GET: Client
         ClientDAL clientDAL = new ClientDAL();
         //[AuthorizedUsers("admin")]
         public ActionResult Index()
@@ -24,7 +23,6 @@ namespace GameCenterMVC.Controllers
             return View();
         }
 
-        // POST: Client/Create
         [HttpPost]
         public ActionResult Create(Client client)
         {
@@ -94,6 +92,11 @@ namespace GameCenterMVC.Controllers
 
                 return View();
 			}
+		}
+        public ActionResult Details(int id)
+		{
+            Client client = ClientDAL.GetByID(id);
+            return PartialView("Details", client);
 		}
     }
 }
