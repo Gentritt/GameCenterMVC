@@ -12,6 +12,7 @@ namespace GameCenterMVC.Controllers
     {
         // GET: Computer
         ComputerDAL computerDAL = new ComputerDAL();
+        [AuthorizedUsers("admin", "manager")]
         public ActionResult Index()
         {
             List<Computer> computers = computerDAL.GetALL().ToList();

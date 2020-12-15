@@ -8,9 +8,11 @@ namespace GameCenterMVC.Controllers
 {
     public class DashBoardController : Controller
     {
-        // GET: DashBoard
+        
         public ActionResult Index()
         {
+            if (Session["Username"] == null)
+                return RedirectToAction("Login", "Account");
             return View();
         }
     }

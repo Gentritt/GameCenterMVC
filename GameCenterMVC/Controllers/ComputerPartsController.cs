@@ -11,6 +11,7 @@ namespace GameCenterMVC.Controllers
     public class ComputerPartsController : Controller
     {
         ComputerPartsDAL computerPartsDAL = new ComputerPartsDAL();
+        [AuthorizedUsers("admin", "manager")]
         public ActionResult Index()
         {
             List<ComputerParts> pcParts = ComputerPartsDAL.GetALL().ToList();

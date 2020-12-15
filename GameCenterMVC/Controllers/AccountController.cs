@@ -33,13 +33,15 @@ namespace GameCenterMVC.Controllers
 			}
             return View();
 		}
-
         public ActionResult LogOut()
 		{
-            FormsAuthentication.SignOut();
+            Session["Username"] = null;
+            Session.Clear();
             Session.Abandon();
+            FormsAuthentication.SignOut();
             return RedirectToAction("Login", "Account");
-                
-		}
+
+
+        }
     }
 }

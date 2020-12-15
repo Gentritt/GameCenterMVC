@@ -12,6 +12,7 @@ namespace GameCenterMVC.Controllers
     {
         Products products = new Products();
         ProductDAL productDAL = new ProductDAL();
+        [AuthorizedUsers("admin", "manager")]
         public ActionResult Index()
         {
 		

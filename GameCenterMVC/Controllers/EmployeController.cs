@@ -11,7 +11,7 @@ namespace GameCenterMVC.Controllers
     public class EmployeController : Controller
     {
         EmployeeDAL employeeDAL = new EmployeeDAL();
-        [AuthorizedUsers("admin")]
+        [AuthorizedUsers("admin","manager")]
 		public ActionResult Index()
         {
             EmployeeDAL employee = new EmployeeDAL();

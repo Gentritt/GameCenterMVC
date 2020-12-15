@@ -12,6 +12,7 @@ namespace GameCenterMVC.Controllers
     {
         ClientDAL clientDAL = new ClientDAL();
         //[AuthorizedUsers("admin")]
+        [AuthorizedUsers("admin", "manager")]
         public ActionResult Index()
         {
             List<Client> clients = clientDAL.GetALL().ToList();

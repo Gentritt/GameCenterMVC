@@ -12,6 +12,7 @@ namespace GameCenterMVC.Controllers
     {
         // GET: Role
         RolesDAL rolesDAL = new RolesDAL();
+        [AuthorizedUsers("admin", "manager")]
         public ActionResult Index()
         {
             List<Roles> roles = RolesDAL.GetALL().ToList();
