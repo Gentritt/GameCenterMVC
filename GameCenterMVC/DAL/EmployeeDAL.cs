@@ -39,6 +39,7 @@ namespace GameCenterMVC.DAL
 									users.Name = reader["Name"].ToString();
 									users.LastName = reader["LastName"].ToString();
 									users.RoleID =int.Parse(reader["RoleID"].ToString());
+									users.RoleName = reader["RoleName"].ToString();
 									users.PersonalID = reader["PersonalID"].ToString();
 									users.Address = reader["Adress"].ToString();
 									users.Birthday = DateTime.Parse(reader["Birthday"].ToString());

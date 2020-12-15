@@ -22,10 +22,10 @@ namespace GameCenterMVC.Models
 			EmployeeDAL employeeDAL = new EmployeeDAL();
 			return employeeDAL.GetALL().Where(x => x.UserName.Equals(user)).FirstOrDefault();
 		}
-		public Roles GetRoles(string role)
+		public Roles GetRoles(string username)
 		{
 			RolesDAL rolesDAL = new RolesDAL();
-			return RolesDAL.GetALL().Where(x => x.Name.Equals(role)).FirstOrDefault();
+			return RolesDAL.GetALL().Where(x => x.Name.Equals(username)).FirstOrDefault();
 		}
 	}
 }
