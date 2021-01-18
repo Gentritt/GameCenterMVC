@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GameCenterMVC.Models.Computer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>PC</h2>
+
+<div class="m-1">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Details","Home", new { id = item.ComputerID})" data-target="#MyModal" data-toggle="modal">
+            <img height="150" width="150" src="../../Content/Images/PcPic.png" id="@item.ComputerID" alt="Pic of pc with id @item.ComputerID">
+        </a>
+    }
+</div>
+
+
+
+<link href="~/Content/Modal/Modal.css" rel="stylesheet" />
+<div class="container">
+
+    <div class="modal" id="MyModal" role="dialog" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4>DemoModalTitle</h4>
+                </div>
+                @*<div class="modal-body">
+
+                    </div>*@
+                @*<div class="modal-footer">
+                        <button class="fa fa-plus-circle" data-dismiss="modal">
+
+                        </button>
+                    </div>*@
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

@@ -26,7 +26,7 @@ namespace GameCenterMVC.Controllers
 				{
                     FormsAuthentication.SetAuthCookie(objLogin.Username, false);
                     Session["Username"] = objLogin.Username;
-                    return RedirectToAction("Index", "DashBoard");
+                    return RedirectToAction("Index", "Home");
 				}
                  ModelState.AddModelError("Error", "Invalid Username Or Password");
 				
