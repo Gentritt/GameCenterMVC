@@ -132,6 +132,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SecureController.cs" />
+    <Compile Include="DAL\BillsDAL.cs" />
     <Compile Include="DAL\ClientDAL.cs" />
     <Compile Include="DAL\ComputerDAL.cs" />
     <Compile Include="DAL\ComputerPartsDAL.cs" />
@@ -156,6 +157,7 @@
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\ServiceHelper.cs" />
+    <Compile Include="Models\StaticCLass.cs" />
     <Compile Include="Models\ValidationsExists.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -290,7 +292,7 @@
     <Content Include="Content\Scripts\DeleteNotify.js" />
     <Content Include="Content\Table.css" />
     <Content Include="Content\Table\TableSpacing.css" />
-    <Content Include="DAL\Database\dbMVC.sql" />
+    <Content Include="DAL\Database\DBMVCGM1.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

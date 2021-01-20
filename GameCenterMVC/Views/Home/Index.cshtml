@@ -13,8 +13,8 @@
 		border-left: 5px solid #808080;
 		margin: 0 10px;
 		height: 100px;
-
 	}
+
 	figure.item {
 		/* To correctly align image, regardless of content height: */
 		vertical-align: top;
@@ -29,45 +29,46 @@
 	@foreach (var item in Model)
 	{
 
-	<a href="@Url.Action("Details","Home", new { id = item.ComputerID})" data-target="#MyModal" data-toggle="modal">
-		<figure class="item">
-			<img class="vertical-line" height="100" width="100" src="../../Content/Images/PcPic.png"
-				 id="@item.ComputerID" alt="Pic of pc with id @item.ComputerID" style="float:left; margin:0px;">
+		<a href="@Url.Action("Details","Home", new { id = item.ComputerID })" data-target="#ModalTest" data-toggle="modal">
+			<figure class="item">
+				<img class="vertical-line" height="100" width="100" src="../../Content/Images/PcPic.png"
+					 id="@item.ComputerID" alt="Pic of pc with id @item.ComputerID" style="float:left; margin:0px;">
 
-			<figcaption>@item.ComputerID.ToString()</figcaption>
-		</figure>
+				<figcaption>@item.ComputerID.ToString()</figcaption>
+			</figure>
 
 
-	</a>
+		</a>
 	}
 </div>
 
-
+@*data-target="#MyModal" data-toggle="modal*@
 
 <link href="~/Content/Modal/Modal.css" rel="stylesheet" />
-<div class="container">
+	<div class="container">
 
-	<div class="modal" id="MyModal" role="dialog" data-keyboard="false" data-backdrop="static">
-		<div class="modal-dialog">
+		<div class="modal" id="ModalTest" role="dialog" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog">
+				<div>Test</div>
 
-			<div class="modal-content">
-				<div class="modal-header">
-					<button class="close" data-dismiss="modal">&times;</button>
-					<h4>DemoModalTitle</h4>
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">&times;</button>
+						<h4>DemoModalTitle</h4>
+					</div>
+					@*<div class="modal-body">
+
+						</div>
+					<div class="modal-footer">
+							<button class="fa fa-plus-circle" data-dismiss="modal">
+
+							</button>
+						</div>*@
+
 				</div>
-				@*<div class="modal-body">
-
-					</div>*@
-				@*<div class="modal-footer">
-						<button class="fa fa-plus-circle" data-dismiss="modal">
-
-						</button>
-					</div>*@
-
 			</div>
 		</div>
-	</div>
 
-</div>
+	</div>
 
 

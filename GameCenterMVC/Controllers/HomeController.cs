@@ -11,6 +11,7 @@ namespace GameCenterMVC.Controllers
     public class HomeController : Controller
     {
         ComputerDAL computerDAL = new ComputerDAL();
+        BillsDAL billsDAL = new BillsDAL();
         // GET: Main
         public ActionResult Index()
         {
@@ -21,13 +22,18 @@ namespace GameCenterMVC.Controllers
         [HttpGet]
         public ActionResult Details(int id)
         {
-            Computer computer = ComputerDAL.getPcByID(id);
-            if (computer == null)
+            
+
+            StaticCLass.ComputerID = id;
+            
+           
+            if (StaticCLass.ComputerID == 0)
             {
                 return HttpNotFound();
 
             }
-            return PartialView("Details", computer);
+
+            return PartialView("Details", ComputerDAL.getPcByID(id));
         }
         
     }
