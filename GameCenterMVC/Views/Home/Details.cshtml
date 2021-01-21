@@ -1,74 +1,80 @@
-﻿@model GameCenterMVC.Models.Computer
+﻿@model GameCenterMVC.Models.Bill
 @using GameCenterMVC.Models
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
 <div class="modal-header bg-info">
-	@*<button type="button"  class="close" data-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
-		</button>*@
-	<h4 class="modal-title">Activate PC</h4>
+    @*<button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+        </button>*@
+    <h4 class="modal-title">Activate PC</h4>
 </div>
 
 <div class="modal-body bg-light">
-	@*<div>
-		<p>PC: @Html.DisplayFor(model => model.ComputerID)</p>
-		<p>Price Per Hour: @Html.DisplayFor(model => model.PricePerHour)</p>
+    @*<div>
+        <p>PC: @Html.DisplayFor(model => model.ComputerID)</p>
+        <p>Price Per Hour: @Html.DisplayFor(model => model.PricePerHour)</p>
 
-		@Html.LabelFor(model => model.ComputerID, htmlAttributes: new { @class = "control-label col-md-1" })
-		<div class="col-md-10">
-			@Html.EditorFor(model => model.ComputerID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-			@Html.ValidationMessageFor(model => model.ComputerID, "", new { @class = "text-danger" })
+        @Html.LabelFor(model => model.ComputerID, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ComputerID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.ComputerID, "", new { @class = "text-danger" })
 
-		</div>
-		@Html.LabelFor(model => model.PricePerHour, htmlAttributes: new { @class = "control-label col-md-1" })
-		<div class="col-md-10">
-			@Html.EditorFor(model => model.PricePerHour, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
-			@Html.ValidationMessageFor(model => model.PricePerHour, "", new { @class = "text-danger"})
+        </div>
+        @Html.LabelFor(model => model.PricePerHour, htmlAttributes: new { @class = "control-label col-md-1" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PricePerHour, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.PricePerHour, "", new { @class = "text-danger"})
 
-		</div>*@
+        </div>*@
 
-	@*<div>
-			<table class="table table-bordered bg-light">
-				<tr>
-					<td>@Html.DisplayName(StaticCLass.ComputerID.ToString())</td>
-					<td>@Html.Editor(StaticCLass.ComputerID.ToString())</td>
-					<p>@StaticCLass.ComputerID</p>
-				</tr>
-
-
-			</table>
-
-			<p>@StaticCLass.ComputerID</p>
-
-		</div>*@
+    @*<div>
+            <table class="table table-bordered bg-light">
+                <tr>
+                    <td>@Html.DisplayName(StaticCLass.ComputerID.ToString())</td>
+                    <td>@Html.Editor(StaticCLass.ComputerID.ToString())</td>
+                    <p>@StaticCLass.ComputerID</p>
+                </tr>
 
 
-		<div>
-			<p>Test</p>
-			<table class="table table-bordered bg-light">
-				<tr>
-					@*<td>@Html.DisplayNameFor(model => model.ComputerID)</td>*@
-					<td>@Html.Label(StaticCLass.ComputerID.ToString(), "ComputerID")</td>
-					<td>@Html.DisplayName(StaticCLass.ComputerID.ToString())</td>
+            </table>
 
+            <p>@StaticCLass.ComputerID</p>
 
-				</tr>
-				@*<tr>
-					<td>@Html.DisplayNameFor(model => model.ComputerPartID)</td>
-					<td>@Html.DisplayFor(model => model.ComputerPartID)</td>
-				</tr>
-				<tr>
-					<td>@Html.DisplayNameFor(model => model.PricePerHour)</td>
-					<td>@Html.DisplayFor(model => model.PricePerHour)</td>
-				</tr>*@
-			</table>
-		</div>
-	
+        </div>*@
+
+    <div>
+        
+        <table class="table table-bordered bg-light">
+            <tr>
+                @*<td>@Html.DisplayNameFor(model => model.ComputerID)</td>*@
+                <td>@Html.Label(StaticCLass.ComputerID.ToString(), "ComputerID")</td>
+                <td>@Html.DisplayName(StaticCLass.ComputerID.ToString())</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.EmployeeID)</td>
+                <td>@Html.EditorFor(model => model.EmployeeID, new { htmlAttributes = new { @class = "form-control", @Value = 13, @readonly = "readonly" } })</td>
+            </tr>
+            @*<tr>
+            <td>@Html.DisplayNameFor(model => model.ComputerPartID)</td>
+            <td>@Html.DisplayFor(model => model.ComputerPartID)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.PricePerHour)</td>
+            <td>@Html.DisplayFor(model => model.PricePerHour)</td>
+        </tr>*@
+        </table>
+    </div>
+
 </div>
 <script src="~/Scripts/Modal/ResetModal.js"></script>
 
 <div class="modal-footer btn-group-toggle">
-	<button type="button" class="btn btn-danger"
-			data-dismiss="modal">
-		Close
-	</button>
+    <button type="button" class="btn btn-danger"
+            data-dismiss="modal">
+        Close
+    </button>
 </div>
-

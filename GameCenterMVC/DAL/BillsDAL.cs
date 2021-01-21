@@ -5,6 +5,7 @@ using System.Web;
 using GameCenterMVC.Models.Interface;
 using GameCenterMVC.Models;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace GameCenterMVC.DAL
 {
@@ -14,7 +15,58 @@ namespace GameCenterMVC.DAL
 		{
 			throw new NotImplementedException();
 		}
+		public static Bill GetBillById(int id)
+		{
+			Bill bill = null;
+			try
+			{
+				using (var con = SqlHelper.GetConnection())
+				{
+					using (var cmd = SqlHelper.Command(con, cmdText: "GetBillById", cmdtype: CommandType.StoredProcedure))
+					{
 
+						cmd.Parameters.AddWithValue("@computerID", id);
+
+
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+
+							if (reader.HasRows)
+							{
+
+								bill = new Bill();
+								while (reader.Read())
+								{
+
+									//Guest guest = new Guest();
+									//Employee users = new Employee();
+
+									bill.ComputerID = int.Parse(reader["ComputerID"].ToString());
+									bill.BillID = int.Parse(reader["BillID"].ToString());
+									bill.EmployeeID = int.Parse(reader["EmployeeID"].ToString());
+									bill.ClientID = int.Parse(reader["ClientID"].ToString());
+									bill.StartTime = DateTime.Parse(reader["StartTime"].ToString());
+									bill.EndTime = DateTime.Parse(reader["EndTime"].ToString());
+									bill.Total = double.Parse(reader["Total"].ToString());
+								}
+							}
+
+						}
+					}
+
+
+
+				}
+
+				return bill;
+
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+		}
 		public List<Bill> Getall()
 		{
 			try

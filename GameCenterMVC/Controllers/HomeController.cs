@@ -22,18 +22,16 @@ namespace GameCenterMVC.Controllers
         [HttpGet]
         public ActionResult Details(int id)
         {
-            
 
             StaticCLass.ComputerID = id;
-            
            
             if (StaticCLass.ComputerID == 0)
             {
                 return HttpNotFound();
 
             }
-
-            return PartialView("Details", ComputerDAL.getPcByID(id));
+            //Te gjendet Bill duke u bazuar ne id e kompjuterit te cilen e pranojm si argument dhe ti dergohet partial Views
+            return PartialView("Details", BillsDAL.GetBillById(id));
         }
         
     }
