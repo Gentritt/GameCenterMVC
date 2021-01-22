@@ -21,6 +21,7 @@ namespace GameCenterMVC.Models
 		public DateTime StartTime { get; set; }
 		public DateTime EndTime { get; set; }
 		public Double Total { get; set; }
+		public string Clients { get; set; }
 
 
 

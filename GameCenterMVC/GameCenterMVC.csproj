@@ -284,6 +284,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\IconStyle.css" />
+    <Content Include="Content\Images\camera-2-icon.png" />
     <Content Include="Content\Images\GamingPC.jpg" />
     <Content Include="Content\Images\PcPic.png" />
     <Content Include="Content\Images\Space.jpg" />

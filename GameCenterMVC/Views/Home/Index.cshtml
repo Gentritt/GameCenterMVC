@@ -26,20 +26,44 @@
 
 <div class="m-1">
 
-	@foreach (var item in Model)
-	{
+    @foreach (var item in Model)
+    {
+        if (item.IsActive == false)
+        {
+            <a href="@Url.Action("Details","Home", new { id = item.ComputerID })" data-target="#ModalTest" data-toggle="modal">
+                <figure class="item">
+                    <img class="vertical-line" height="100" width="100" src="../../Content/Images/PcPic.png"
+                         id="@item.ComputerID" alt="Pic of pc with id @item.ComputerID" style="float:left; margin:0px;">
 
-		<a href="@Url.Action("Details","Home", new { id = item.ComputerID })" data-target="#ModalTest" data-toggle="modal">
-			<figure class="item">
-				<img class="vertical-line" height="100" width="100" src="../../Content/Images/PcPic.png"
-					 id="@item.ComputerID" alt="Pic of pc with id @item.ComputerID" style="float:left; margin:0px;">
+                    <figcaption>@item.ComputerID.ToString()</figcaption>
+                </figure>
+            </a>
+        }
+        else
+        {
+            <a href="@Url.Action("Details","Home", new { id = item.ComputerID })" data-target="#ModalTest" data-toggle="modal">
+                <figure class="item">
+                    <img class="vertical-line" height="100" width="100" src="../../Content/Images/camera-2-icon.png"
+                         id="@item.ComputerID" alt="Pic of pc with id @item.ComputerID" style="float:left; margin:0px;">
 
-				<figcaption>@item.ComputerID.ToString()</figcaption>
-			</figure>
+                    <figcaption>@item.ComputerID.ToString()</figcaption>
+                </figure>
+            </a>
+        }
 
 
-		</a>
-	}
+
+
+
+        @*<a href="@Url.Action("Details","Home", new { id = item.ComputerID })" data-target="#ModalTest" data-toggle="modal">
+                <figure class="item">
+                    <img class="vertical-line" height="100" width="100" src="../../Content/Images/PcPic.png"
+                         id="@item.ComputerID" alt="Pic of pc with id @item.ComputerID" style="float:left; margin:0px;">
+
+                    <figcaption>@item.ComputerID.ToString()</figcaption>
+                </figure>
+            </a>*@
+    }
 </div>
 
 @*data-target="#MyModal" data-toggle="modal*@
