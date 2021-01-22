@@ -46,33 +46,74 @@
 
         </div>*@
 
-    <div>
-        
+    @*<div>
+
         <table class="table table-bordered bg-light">
             <tr>
-                @*<td>@Html.DisplayNameFor(model => model.ComputerID)</td>*@
-                <td>@Html.Label(StaticCLass.ComputerID.ToString(), "ComputerID")</td>
-                <td>@Html.DisplayName(StaticCLass.ComputerID.ToString())</td>
+                <td>@Html.DisplayNameFor(model => model.ComputerID)</td>
+                <td>@Html.LabelFor(model => model.ComputerID, "ComputerID")</td>
+                <td>@Html.EditorFor(model => model.ComputerID, new { htmlAttributes = new { @class = "form-control", @Value = StaticCLass.ComputerID, @readonly = "readonly" } })</td>
             </tr>
             <tr>
                 <td>@Html.LabelFor(model => model.EmployeeID)</td>
-                <td>@Html.EditorFor(model => model.EmployeeID, new { htmlAttributes = new { @class = "form-control", @Value = 13, @readonly = "readonly" } })</td>
+                <td>@Html.EditorFor(model => model.EmployeeID, new { htmlAttributes = new { @class = "form-control", @Value = 15, @readonly = "readonly" } })</td>
             </tr>
-            @*<tr>
-            <td>@Html.DisplayNameFor(model => model.ComputerPartID)</td>
-            <td>@Html.DisplayFor(model => model.ComputerPartID)</td>
-        </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.PricePerHour)</td>
-            <td>@Html.DisplayFor(model => model.PricePerHour)</td>
-        </tr>*@
+            <tr>
+                    <td>@Html.DisplayNameFor(model => model.ComputerPartID)</td>
+                    <td>@Html.DisplayFor(model => model.ComputerPartID)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.PricePerHour)</td>
+                    <td>@Html.DisplayFor(model => model.PricePerHour)</td>
+                </tr>
         </table>
+    </div>*@
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.ComputerID, "ComputerID", htmlAttributes: new { @class = "control-label col-md-5" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ComputerID, new { htmlAttributes = new { @class = "form-control", @Value = StaticCLass.ComputerID, @readonly = "readonly" } })
+                @*@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmployeeID, htmlAttributes: new { @class = "control-label col-md-5" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmployeeID, new { htmlAttributes = new { @class = "form-control", @Value = 1, @readonly = "readonly" } })
+                @*@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ClientID, "Client", htmlAttributes: new { @class = "control-label col-md-5" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.RoleID, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(model => model.ClientID, new SelectList(GameCenterMVC.DAL.ClientDAL.GetALL().ToList(), "ClientID", "UserName"), new
+                   {
+                       @class = "form-control"
+
+                   })
+                @Html.ValidationMessageFor(model => model.ClientID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.StartTime, "Start Time", htmlAttributes: new { @class = "control-label col-md-5" })
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToLongTimeString(), @readonly = "readonly" } })
+                @*@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+
     </div>
 
 </div>
 <script src="~/Scripts/Modal/ResetModal.js"></script>
 
 <div class="modal-footer btn-group-toggle">
+    <input type="submit" value="Submit" class="btn btn-info" />
     <button type="button" class="btn btn-danger"
             data-dismiss="modal">
         Close

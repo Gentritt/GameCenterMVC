@@ -52,7 +52,7 @@ namespace GameCenterMVC.DAL
 			}
 		}
 
-		public List<Client> GetALL()
+		public static List<Client> GetALL()
 		{
 			try
 			{

@@ -15,7 +15,7 @@ namespace GameCenterMVC.Controllers
         [AuthorizedUsers("admin", "manager")]
         public ActionResult Index()
         {
-            List<Client> clients = clientDAL.GetALL().ToList();
+            List<Client> clients = ClientDAL.GetALL().ToList();
             ViewBag.Client = clients;
             return View(clients);
         }

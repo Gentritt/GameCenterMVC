@@ -17,7 +17,7 @@ namespace GameCenterMVC.Models
 		public bool ExitsMember(string username)
 		{
 			ClientDAL clientDAL = new ClientDAL();
-			return clientDAL.GetALL().Any(x => x.Username == username);
+			return ClientDAL.GetALL().Any(x => x.Username == username);
 		}
 
 		public bool ExitsRole(string name)
