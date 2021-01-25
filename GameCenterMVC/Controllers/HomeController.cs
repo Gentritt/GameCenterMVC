@@ -37,6 +37,26 @@ namespace GameCenterMVC.Controllers
             //Te gjendet Bill duke u bazuar ne id e kompjuterit te cilen e pranojm si argument dhe ti dergohet partial Views
             return PartialView("Details", BillsDAL.GetBillById(id));
         }
-        
+        [HttpPost]
+        public ActionResult Add(Bill bill)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    billsDAL.ADD(bill);
+                    return RedirectToAction("Index");
+
+                }
+                return View();
+            }
+            catch (Exception)
+            {
+
+                return View();
+            }
+
+
+        }
     }
 }

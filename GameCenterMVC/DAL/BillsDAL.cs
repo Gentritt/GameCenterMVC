@@ -13,7 +13,34 @@ namespace GameCenterMVC.DAL
 	{
 		public int ADD(Bill model)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				using (var conn = SqlHelper.GetConnection())
+				{
+
+					using (var cmd = SqlHelper.Command(conn, cmdText: "Add_Bill", cmdtype: System.Data.CommandType.StoredProcedure))
+					{
+						cmd.Parameters.AddWithValue("@employeeID", model.EmployeeID);
+						cmd.Parameters.AddWithValue("@clientID", model.ClientID);
+						cmd.Parameters.AddWithValue("@pcID", model.ComputerID);
+						cmd.Parameters.AddWithValue("@startTime", model.StartTime);
+						
+
+						int rowaffected = cmd.ExecuteNonQuery();
+
+
+						return rowaffected;
+					}
+
+
+				}
+
+			}
+			catch (Exception e)
+			{
+
+				return -1;
+			}
 		}
 		public static Bill GetBillById(int id)
 		{
@@ -46,8 +73,10 @@ namespace GameCenterMVC.DAL
 									bill.EmployeeID = int.Parse(reader["EmployeeID"].ToString());
 									bill.ClientID = int.Parse(reader["ClientID"].ToString());
 									bill.StartTime = DateTime.Parse(reader["StartTime"].ToString());
-									bill.EndTime = DateTime.Parse(reader["EndTime"].ToString());
-									bill.Total = double.Parse(reader["Total"].ToString());
+									if (reader["EndTime"] != DBNull.Value)
+										bill.EndTime = DateTime.Parse(reader["EndTime"].ToString());
+									if (reader["Total"] != DBNull.Value)
+										bill.Total = double.Parse(reader["Total"].ToString());
 								}
 							}
 
