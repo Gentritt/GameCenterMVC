@@ -1,0 +1,52 @@
+﻿@model GameCenterMVC.Models.Bill
+
+<div class="modal-header bg-info">
+	@*<button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+		</button>*@
+	<h4 class="modal-title">Details Record</h4>
+</div>
+<div class="modal-body bg-light">
+	<div>
+		<table class="table table-bordered bg-light">
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.BillID)</td>
+				<td>@Html.DisplayFor(model => model.BillID)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.EmployeeID)</td>
+				<td>@Html.DisplayFor(model => model.EmployeeID)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.ClientID)</td>
+				<td>@Html.DisplayFor(model => model.ClientID)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.ComputerID)</td>
+				<td>@Html.DisplayFor(model => model.ComputerID)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.StartTime)</td>
+				<td>@Html.DisplayFor(model => model.StartTime)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.EndTime)</td>
+				<td>@Html.DisplayFor(model => model.EndTime)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Total)</td>
+				<td>@Html.DisplayFor(model => model.Total)</td>
+			</tr>
+			
+		</table>
+	</div>
+</div>
+<div class="modal-footer btn-group-toggle">
+	<button type="button" class="btn btn-danger"
+			data-dismiss="modal">
+		Close
+	</button>
+</div>
+
+
+

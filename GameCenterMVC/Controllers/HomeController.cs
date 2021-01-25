@@ -20,6 +20,14 @@ namespace GameCenterMVC.Controllers
             ViewBag.Computer = computers;
             return View(computers);
         }
+        public ActionResult BillsHistory()
+		{
+            List<Bill> bills = billsDAL.Getall().ToList();
+            ViewBag.Bills = bills;
+            return View(bills);
+
+		}
+        
         [HttpGet]
         public ActionResult Details(int id)
         {
@@ -58,5 +66,31 @@ namespace GameCenterMVC.Controllers
 
 
         }
+        [HttpGet]
+        public ActionResult BillDetails(int id)
+        {
+            Bill bill = BillsDAL.GetByID(id);
+            return PartialView("BillDetails", bill);
+
+        }
+        public ActionResult Remove(int id)
+		{
+			try
+			{
+				if (ModelState.IsValid)
+				{
+                    billsDAL.Remove(id);
+                    return RedirectToAction("BillsHistory");
+				}
+
+                return View();
+
+			}
+			catch (Exception)
+			{
+
+                return View();
+			}
+		}
     }
 }

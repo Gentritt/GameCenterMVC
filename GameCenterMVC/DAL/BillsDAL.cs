@@ -96,6 +96,60 @@ namespace GameCenterMVC.DAL
 				throw;
 			}
 		}
+
+		public static Bill GetByID(int id)
+		{
+			Bill bill = null;
+			try
+			{
+				using (var con = SqlHelper.GetConnection())
+				{
+					using (var cmd = SqlHelper.Command(con, cmdText: "Get_ID", cmdtype: CommandType.StoredProcedure))
+					{
+
+						cmd.Parameters.AddWithValue("@billID", id);
+
+
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+
+							if (reader.HasRows)
+							{
+
+								bill = new Bill();
+								while (reader.Read())
+								{
+
+									//Guest guest = new Guest();
+									//Employee users = new Employee();
+									bill.BillID = int.Parse(reader["BillID"].ToString());
+									bill.EmployeeID = int.Parse(reader["EmployeeID"].ToString());
+									bill.ClientID = int.Parse(reader["ClientID"].ToString());
+									bill.ComputerID = int.Parse(reader["ComputerID"].ToString());
+									bill.StartTime = DateTime.Parse(reader["StartTime"].ToString());
+									if (reader["EndTime"] != DBNull.Value)
+										bill.EndTime = DateTime.Parse(reader["EndTime"].ToString());
+									if (reader["Total"] != DBNull.Value)
+										bill.Total = double.Parse(reader["Total"].ToString());
+								}
+							}
+
+						}
+					}
+
+
+
+				}
+
+				return bill;
+
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+		}
 		public List<Bill> Getall()
 		{
 			try
@@ -123,9 +177,10 @@ namespace GameCenterMVC.DAL
 									bill1.ComputerID =int.Parse( reader["ComputerID"].ToString());
 									bill1.EmployeeID = int.Parse(reader["EmployeeID"].ToString());
 									bill1.StartTime = DateTime.Parse(reader["StartTime"].ToString());
-									bill1.EndTime = DateTime.Parse(reader["EndTime"].ToString());
-									bill1.Total = Double.Parse(reader["Total"].ToString());
-
+									if(reader["EndTime"]!= DBNull.Value)
+										bill1.EndTime = DateTime.Parse(reader["EndTime"].ToString());
+									if(reader["Total"]!=DBNull.Value)
+										bill1.Total = Double.Parse(reader["Total"].ToString());
 									bill.Add(bill1);
 
 								}
@@ -154,7 +209,27 @@ namespace GameCenterMVC.DAL
 
 		public int Remove(int ID)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				using (var conn = SqlHelper.GetConnection())
+				{
+
+					using (var cmd = SqlHelper.Command(conn, cmdText: "Remove_Bill", cmdtype: System.Data.CommandType.StoredProcedure))
+					{
+						cmd.Parameters.AddWithValue("@billID", ID);
+						int rowaffected = cmd.ExecuteNonQuery();
+						return rowaffected;
+					}
+
+
+				}
+
+			}
+			catch (Exception e)
+			{
+
+				return -1;
+			}
 		}
 	}
 }
