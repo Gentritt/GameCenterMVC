@@ -10,5 +10,6 @@ namespace GameCenterMVC.Models
 	{
 		[DisplayName("ComputerID")]
 		public static int ComputerID { get; set; }
+		public static int EmployeeID { get; set; }
 	}
 }

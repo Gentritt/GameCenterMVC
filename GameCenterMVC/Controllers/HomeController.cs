@@ -11,6 +11,7 @@ namespace GameCenterMVC.Controllers
     public class HomeController : Controller
     {
         ComputerDAL computerDAL = new ComputerDAL();
+        EmployeeDAL employeeDAL = new EmployeeDAL();
         BillsDAL billsDAL = new BillsDAL();
         // GET: Main
         public ActionResult Index()
@@ -24,7 +25,10 @@ namespace GameCenterMVC.Controllers
         {
 
             StaticCLass.ComputerID = id;
-           
+
+            employeeDAL.GetByUser(Session["Username"].ToString());
+
+
             if (StaticCLass.ComputerID == 0)
             {
                 return HttpNotFound();

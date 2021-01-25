@@ -293,7 +293,7 @@
     <Content Include="Content\Scripts\DeleteNotify.js" />
     <Content Include="Content\Table.css" />
     <Content Include="Content\Table\TableSpacing.css" />
-    <Content Include="DAL\Database\NewDbMVC.sql" />
+    <Content Include="DAL\Database\DB1MVC.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

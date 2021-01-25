@@ -11,6 +11,54 @@ namespace GameCenterMVC.DAL
 {
 	public class EmployeeDAL: ICrudOperations<Employee>
 	{
+
+		public Employee GetByUser(string name)
+		{
+			Employee users = null;
+			try
+			{
+				using (var con = SqlHelper.GetConnection())
+				{
+					using (var cmd = SqlHelper.Command(con, cmdText: "GetByUsername", cmdtype: CommandType.StoredProcedure))
+					{
+
+						cmd.Parameters.AddWithValue("@username", name);
+
+
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+
+							if (reader.HasRows)
+							{
+
+								users = new Employee();
+								while (reader.Read())
+								{
+
+									//Guest guest = new Guest();
+									//Employee users = new Employee();
+									
+									StaticCLass.EmployeeID = int.Parse(reader["EmployeeID"].ToString());
+									users.EmployeeID = int.Parse(reader["EmployeeID"].ToString());
+
+								}
+							}
+
+						}
+					}
+
+				}
+
+				return users;
+
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e);
+				throw;
+			}
+
+		}
 		public  List<Employee> GetALL()
 		{
 
