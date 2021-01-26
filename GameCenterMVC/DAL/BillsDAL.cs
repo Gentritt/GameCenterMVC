@@ -221,6 +221,7 @@ namespace GameCenterMVC.DAL
 									bill1.BillID = int.Parse(reader["BillID"].ToString());
 									bill1.ComputerID =int.Parse( reader["ComputerID"].ToString());
 									bill1.EmployeeID = int.Parse(reader["EmployeeID"].ToString());
+									bill1.ClientID = int.Parse(reader["ClientID"].ToString());
 									bill1.StartTime = DateTime.Parse(reader["StartTime"].ToString());
 									if(reader["EndTime"]!= DBNull.Value)
 										bill1.EndTime = DateTime.Parse(reader["EndTime"].ToString());
