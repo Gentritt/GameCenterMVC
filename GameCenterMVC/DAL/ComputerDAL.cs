@@ -67,7 +67,30 @@ namespace GameCenterMVC.DAL
 				return null;
 			}
 		}
+		public int IsActive(Computer model)
+        {
+            try
+            {
+				using(var conn = SqlHelper.GetConnection())
+                {
+					using(var cmd= SqlHelper.Command(conn, cmdText: "IsActivePC", cmdtype: System.Data.CommandType.StoredProcedure))
+                    {
+						cmd.Parameters.AddWithValue("@pcID", model.ComputerID);
+						cmd.Parameters.AddWithValue("@isActive", model.IsActive);
 
+						int rowaffected = cmd.ExecuteNonQuery();
+
+
+						return rowaffected;
+					}
+                }
+            }
+			catch (Exception e)
+			{
+
+				return -1;
+			}
+		}
 		public int ADD(Computer model)
 		{
 			try

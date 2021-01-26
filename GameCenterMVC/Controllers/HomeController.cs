@@ -48,6 +48,10 @@ namespace GameCenterMVC.Controllers
         [HttpPost]
         public ActionResult Add(Bill bill)
         {
+            Computer pc = new Computer();
+            pc.ComputerID = bill.ComputerID;
+            pc.IsActive = true;
+            computerDAL.IsActive(pc);
             try
             {
                 if (ModelState.IsValid)
@@ -76,7 +80,13 @@ namespace GameCenterMVC.Controllers
         [HttpGet]
         public ActionResult PrintBill(int id)
 		{
+          
+
             Bill bill = BillsDAL.Get(id); //Merr Bill e fundit per qdo ID te kompjuterit.
+            Computer pc = new Computer();
+            pc.ComputerID = bill.ComputerID;
+            pc.IsActive = false;
+            computerDAL.IsActive(pc);
             return PartialView("PrintBill", bill);
 		}
         public ActionResult Remove(int id)
@@ -102,6 +112,7 @@ namespace GameCenterMVC.Controllers
         {
             
             bill.EndTime = DateTime.Parse(DateTime.Now.ToLongTimeString());
+            bill.Total = 1;
             billsDAL.Update(id, bill);
 
             return RedirectToAction("Index","Home");

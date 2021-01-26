@@ -286,6 +286,8 @@
     <Content Include="Content\IconStyle.css" />
     <Content Include="Content\Images\camera-2-icon.png" />
     <Content Include="Content\Images\GamingPC.jpg" />
+    <Content Include="Content\Images\PC-a-icon.png" />
+    <Content Include="Content\Images\PC-icon.png" />
     <Content Include="Content\Images\PcPic.png" />
     <Content Include="Content\Images\Space.jpg" />
     <Content Include="Content\Label.css" />
@@ -293,7 +295,7 @@
     <Content Include="Content\Scripts\DeleteNotify.js" />
     <Content Include="Content\Table.css" />
     <Content Include="Content\Table\TableSpacing.css" />
-    <Content Include="DAL\Database\DB6MVC.sql" />
+    <Content Include="DAL\Database\DB7MVC.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
