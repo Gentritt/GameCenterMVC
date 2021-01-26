@@ -96,6 +96,51 @@ namespace GameCenterMVC.DAL
 				throw;
 			}
 		}
+		public static Bill Get(int id)
+		{
+			try
+			{
+
+
+
+				Bill bill = null;
+				using (var con = SqlHelper.GetConnection())
+				{
+					using (var cmd = SqlHelper.Command(con, cmdText: "GetBill", CommandType.StoredProcedure))
+					{
+						cmd.Parameters.AddWithValue("@computerID", id);
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+							bill = new Bill();
+							while (reader.Read())
+							{
+								
+								bill.BillID = int.Parse(reader["BillID"].ToString());
+								bill.EmployeeID = int.Parse(reader["EmployeeID"].ToString());
+								bill.ClientID = int.Parse(reader["ClientID"].ToString());
+								bill.ComputerID = int.Parse(reader["ComputerID"].ToString());
+								bill.StartTime = DateTime.Parse(reader["StartTime"].ToString());
+								if (reader["EndTime"] != DBNull.Value)
+									bill.EndTime = DateTime.Parse(reader["EndTime"].ToString());
+								if (reader["Total"] != DBNull.Value)
+									bill.Total = double.Parse(reader["Total"].ToString());
+
+							}
+
+						}
+
+					}
+					return bill;
+
+				}
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+
+		}
 
 		public static Bill GetByID(int id)
 		{

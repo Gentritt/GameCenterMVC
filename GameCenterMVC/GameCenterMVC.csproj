@@ -293,7 +293,7 @@
     <Content Include="Content\Scripts\DeleteNotify.js" />
     <Content Include="Content\Table.css" />
     <Content Include="Content\Table\TableSpacing.css" />
-    <Content Include="DAL\Database\DB4MVC.sql" />
+    <Content Include="DAL\Database\DB5MVC.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -621,6 +621,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Content\LoginCSS\Login.css" />
+    <Content Include="Scripts\Modal\ModalClose.js" />
     <Content Include="Scripts\Modal\ResetModal.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
@@ -757,6 +758,7 @@
     <Content Include="Views\Home\BillsHistory.cshtml" />
     <Content Include="Views\Home\Remove.cshtml" />
     <Content Include="Views\Home\BillDetails.cshtml" />
+    <Content Include="Views\Home\PrintBill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

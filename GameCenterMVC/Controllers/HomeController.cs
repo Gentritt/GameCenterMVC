@@ -73,6 +73,12 @@ namespace GameCenterMVC.Controllers
             return PartialView("BillDetails", bill);
 
         }
+        [HttpGet]
+        public ActionResult PrintBill(int id)
+		{
+            Bill bill = BillsDAL.Get(id); //Merr Bill e fundit per qdo ID te kompjuterit.
+            return PartialView("PrintBill", bill);
+		}
         public ActionResult Remove(int id)
 		{
 			try
