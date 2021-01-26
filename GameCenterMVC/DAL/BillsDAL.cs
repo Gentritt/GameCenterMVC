@@ -42,6 +42,37 @@ namespace GameCenterMVC.DAL
 				return -1;
 			}
 		}
+		public int Update(int id, Bill model)
+		{
+			try
+			{
+				using (var conn = SqlHelper.GetConnection())
+				{
+
+					using (var cmd = SqlHelper.Command(conn, cmdText: "Update_Bills", cmdtype: System.Data.CommandType.StoredProcedure))
+					{
+
+						cmd.Parameters.AddWithValue("@billID", id);
+						cmd.Parameters.AddWithValue("@endTime", model.EndTime);
+						cmd.Parameters.AddWithValue("@total", model.Total);
+
+						int rowaffected = cmd.ExecuteNonQuery();
+
+
+						return rowaffected;
+					}
+
+
+				}
+				
+
+			}
+			catch (Exception e)
+			{
+
+				return -1;
+			}
+		}
 		public static Bill GetBillById(int id)
 		{
 			Bill bill = null;

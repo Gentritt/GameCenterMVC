@@ -98,5 +98,13 @@ namespace GameCenterMVC.Controllers
                 return View();
 			}
 		}
+        public ActionResult UpdateBills(int id, Bill bill)
+        {
+            
+            bill.EndTime = DateTime.Parse(DateTime.Now.ToLongTimeString());
+            billsDAL.Update(id, bill);
+
+            return RedirectToAction("Index","Home");
+        }
     }
 }

@@ -6,9 +6,10 @@
 }
 
 
-@using (Html.BeginForm("", ""))
+@using (Html.BeginForm("UpdateBills", "Home", new { id = Model.BillID}))
 {
-	<div class="modal-header bg-info">
+
+    <div class="modal-header bg-info">
 
 		<h4 class="modal-title">Print Bill</h4>
 	</div>
@@ -89,7 +90,7 @@
 			@Html.LabelFor(model => model.EndTime, "End Time", htmlAttributes: new { @class = "control-label col-md-5" })
 
 			<div class="col-md-10">
-				@Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToLongTimeString(), @readonly = "readonly" } })
+				@Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
 			</div>
 		</div>
 		<div class="form-group">
@@ -104,12 +105,13 @@
 
 	<script src="~/Scripts/Modal/ResetModal.js"></script>
 
-	<div class="modal-footer btn-group-toggle">
+
+    <div class="modal-footer btn-group-toggle">
 		<input type="submit" value="Submit" class="btn btn-info" />
 		<button type="button" class="btn btn-danger"
 				data-dismiss="modal">
 			Close
-		</button>
+        </button>
 
 
 	</div>

@@ -41,7 +41,7 @@
 		}
 		else
 		{
-			<a href="@Url.Action("Details","Home", new { id = item.ComputerID })" data-target="#ModalTest" data-toggle="modal" data-dismiss-class>
+			<a href="@Url.Action("PrintBill","Home", new { id = item.ComputerID })" data-target="#ModalTest" data-toggle="modal" data-dismiss-class>
 				<figure class="item">
 					<img class="vertical-line" height="100" width="100" src="../../Content/Images/camera-2-icon.png"
 						 id="@item.ComputerID" alt="Pic of pc with id @item.ComputerID" style="float:left; margin:0px;">
