@@ -112,7 +112,7 @@ namespace GameCenterMVC.Controllers
         {
             
             bill.EndTime = DateTime.Parse(DateTime.Now.ToLongTimeString());
-            bill.Total = 1;
+            bill.Total = 1;     
             billsDAL.Update(id, bill);
 
             return RedirectToAction("Index","Home");
