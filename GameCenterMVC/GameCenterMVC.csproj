@@ -761,6 +761,7 @@
     <Content Include="Views\Home\Remove.cshtml" />
     <Content Include="Views\Home\BillDetails.cshtml" />
     <Content Include="Views\Home\PrintBill.cshtml" />
+    <Content Include="Views\Home\ShowBill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

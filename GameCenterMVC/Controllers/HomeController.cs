@@ -114,8 +114,13 @@ namespace GameCenterMVC.Controllers
             bill.EndTime = DateTime.Parse(DateTime.Now.ToLongTimeString());
             bill.Total = 1;     
             billsDAL.Update(id, bill);
+            return PartialView("ShowBill", bill);
+		}
 
-            return RedirectToAction("Index","Home");
-        }
+        public ActionResult ShowBill(int id)
+		{
+            Bill bill = BillsDAL.Get(id);
+            return PartialView();
+		}
     }
 }
