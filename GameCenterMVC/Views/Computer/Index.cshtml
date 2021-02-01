@@ -7,12 +7,12 @@
 <script src="~/Scripts/Computer/Computer.js"></script>
 <div class="top-buffer"></div>
 <div class="panel panel-primary">
-	<h2>Manage Computers</h2>
+	<h2>@GameCenterMVC.Resources.Dashboard.Manage_Computers</h2>
 	<hr />
 	<div class="panel-body">
 		<div class="btn-group">
 			<a href="@Url.Action("Create","Computer")" , class="btn btn-outline-danger">
-				<i class="fa fa-plus-circle"></i> Add Computer
+				<i class="fa fa-plus-circle"></i> @GameCenterMVC.Resources.Computers.Add_Computer
 			</a>
 		</div>
 		<hr />
@@ -22,7 +22,7 @@
 				<tr>
 					<th>ID</th>
 					<th>PartID</th>
-					<th>PricePerHour</th>
+					<th>@GameCenterMVC.Resources.Computers.PricePerHour</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,14 +38,14 @@
 							<td>
 								<a href="@Url.Action("Update", "Computer", new { id = item.ComputerID })"
 								   class="btn btn-info">
-									<i class="fa fa-edit"></i>  Edit
+									<i class="fa fa-edit"></i> @GameCenterMVC.Resources.Employees.Edit
 								</a>
 								<a href="@Url.Action("Details","Computer", new { id = item.ComputerID})"
 								   class="btn btn-info" data-target="#MyModal" data-toggle="modal">
-									<i class="fa fa-edit"></i>  Details
+									<i class="fa fa-edit"></i> @GameCenterMVC.Resources.Employees.Details
 								</a>
 								@*<button type="button" class="btn btn-info" data-target="#MyModal" data-toggle="modal">@Url.Action("Details", "Computer", new { id = item.ComputerID })</button>*@
-								<a onclick="Delete(@item.ComputerID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+								<a onclick="Delete(@item.ComputerID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>@GameCenterMVC.Resources.Employees.Delete</a>
 								@*<i class="glyphicon glyphicon-trash"></i>  Delete*@
 
 							</td>

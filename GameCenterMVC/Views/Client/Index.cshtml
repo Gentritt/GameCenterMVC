@@ -1,11 +1,12 @@
 ﻿@model IEnumerable<GameCenterMVC.Models.Client>
+@using GameCenterMVC.Resources
 
 @{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
 @*<link href="~/Content/Table.css" rel="stylesheet" />*@
-<h2>Manage Members </h2>
+<h2>@Dashboard.Manage_Members</h2>
 <hr />
 
 <div class="top-buffer"></div>
@@ -14,7 +15,7 @@
 	<div class="panel-body">
 		<div class="btn-group">
 			<a href="@Url.Action("Create","Client")" , class="btn btn-outline-danger">
-				<i class="fa fa-plus-circle"></i>  Add Member
+				<i class="fa fa-plus-circle"></i> @Clients.Add_Member
 			</a>
 		</div>
 		<hr />
@@ -23,16 +24,16 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Name</th>
-					<th>Lastname</th>
-					<th>PersonalID</th>
-					<th>Address</th>
-					<th>Birthday</th>
-					<th>PhoneNumber</th>
-					<th>Email</th>
-					<th>Username</th>
-					<th>Password</th>
-					<th>Balance</th>
+					<th>@Clients.Name</th>
+					<th>@Clients.LastName</th>
+					<th>@Clients.PersonalID</th>
+					<th>@Clients.Address</th>
+					<th>@Clients.Birthday</th>
+					<th>@Clients.PhoneNumber</th>
+					<th>@Clients.Email</th>
+					<th>@Clients.Username</th>
+					<th>@Clients.Password</th>
+					<th>@Clients.Balance</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -56,18 +57,18 @@
 							<td>
 								<a href="@Url.Action("Update", "Client", new { id = item.ClientID }) "
 								   class="btn btn-info">
-									<i class="fa fa-edit"></i>  Edit
+									<i class="fa fa-edit"></i>@Clients.Edit
 								</a>
 							
 							</td>
 							<td>
 								<a href="@Url.Action("Details", "Client", new { id = item.ClientID }) "
 								   class="btn btn-info" data-target="#MyModal" data-toggle="modal">
-									<i class="fa fa-edit"></i> Details
+									<i class="fa fa-edit"></i> @Clients.Details
 								</a>
 							</td>
 							<td>
-								<a onclick="Delete(@item.ClientID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+								<a onclick="Delete(@item.ClientID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>@Clients.Delete</a>
 
 							</td>
 						</tr>

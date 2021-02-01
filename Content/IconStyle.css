@@ -1,0 +1,14 @@
+﻿<style >
+.inner-addon .glyphicon {
+	position: absolute;
+	padding: 10px;
+	pointer-events: none;
+}
+
+
+/* add padding  */
+.left-addon input {
+	padding-left: 30px;
+}
+
+</style >

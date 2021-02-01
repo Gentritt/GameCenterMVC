@@ -13,7 +13,7 @@ namespace GameCenterMVC.Models
 		[Required(ErrorMessage = "Required!")]
 		public int ComputerPartID { get; set; }
 		public virtual ComputerParts ComputerParts { get; set; }
-
+		[Display(Name = "PricePerHour", ResourceType = typeof(GameCenterMVC.Resources.Computers))]
 		[Required(ErrorMessage ="Required!")]
 		//[RegularExpression("^[0-9]*$", ErrorMessage = "PricePerHour must be numeric")]
 		public double PricePerHour { get; set; }

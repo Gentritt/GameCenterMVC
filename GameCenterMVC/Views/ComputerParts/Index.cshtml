@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<GameCenterMVC.Models.ComputerParts>
+@using GameCenterMVC.Resources
 
 @{
 	ViewBag.Title = "Index";
@@ -7,12 +8,12 @@
 
 <div class="top-buffer"></div>
 <div class="panel panel-primary">
-	<h2>Manage Parts</h2>
+	<h2>@Dashboard.Manage_PcParts</h2>
 	<hr />
 	<div class="panel-body">
 		<div class="btn-group">
 			<a href="@Url.Action("Create","ComputerParts")" , class="btn btn-outline-danger">
-				<i class="fa fa-plus-circle"></i> Add Part
+				<i class="fa fa-plus-circle"></i>  @ComputerParts.Add_Part
 			</a>
 		</div>
 		<hr />
@@ -21,20 +22,20 @@
 			<thead>
 				<tr>
 					<th>PartID</th>
-					<th>Case</th>
-					<th>Mouse</th>
-					<th>KeyBoard</th>
-					<th>HeadSet</th>
-					<th>Monitor</th>
-					<th>MousePad</th>
-					<th>CPU</th>
-					<th>GPU</th>
-					<th>MotherBoard</th>
-					<th>RAM</th>
-					<th>SSD</th>
-					<th>HDD</th>
-					<th>PSU</th>
-					<th>Cooler</th>
+					<th>@ComputerParts.Case</th>
+					<th>@ComputerParts.Mouse</th>
+					<th>@ComputerParts.KeyBoard</th>
+					<th>@ComputerParts.HeadSet</th>
+					<th>@ComputerParts.Monitor</th>
+					<th>@ComputerParts.MousePad</th>
+					<th>@ComputerParts.CPU</th>
+					<th>@ComputerParts.GPU</th>
+					<th>@ComputerParts.MotherBoard</th>
+					<th>@ComputerParts.RAM</th>
+					<th>@ComputerParts.SSD</th>
+					<th>@ComputerParts.HDD</th>
+					<th>@ComputerParts.PSU</th>
+					<th>@ComputerParts.Cooler</th>
 
 				</tr>
 			</thead>
@@ -63,17 +64,17 @@
 							<td>
 								<a href="@Url.Action("Update", "ComputerParts", new { id = item.PartID })"
 								   class="btn btn-info">
-									<i class="fa fa-edit"></i>  Edit
+									<i class="fa fa-edit"></i> @Employees.Edit
 								</a>
 							</td>
 							<td>
 								<a href="@Url.Action("Details", "ComputerParts", new { id = item.PartID })"
 								   class="btn btn-info" data-target="#MyModal" data-toggle="modal">
-									<i class="fa fa-edit"></i>  Details
+									<i class="fa fa-edit"></i> @Employees.Details
 								</a>
 							</td>
 							<td>
-								<a onclick="Delete(@item.PartID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+								<a onclick="Delete(@item.PartID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>@Employees.Delete</a>
 							</td>
 						</tr>
 					}

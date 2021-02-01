@@ -129,6 +129,7 @@
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\EmployeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SecureController.cs" />
@@ -160,6 +161,71 @@
     <Compile Include="Models\StaticCLass.cs" />
     <Compile Include="Models\ValidationsExists.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Clients.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clients.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Clients.sq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clients.sq.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ComputerParts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerParts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ComputerParts.sq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComputerParts.sq.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Computers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Computers.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Dashboard.sq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dashboard.sq.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Dashboard.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dashboard.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Employees.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employees.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Employees.sq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employees.sq.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Product.sq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Product.sq.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Product.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Product.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Roles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Roles.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Roles.sq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Roles.sq.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\alertifyjs\alertify.css" />
@@ -329,177 +395,6 @@
     <Content Include="Content\assets\css\bootstrap.css.map" />
     <Content Include="Content\assets\css\bootstrap.min.css.map" />
     <Content Include="Content\assets\css\style.css.map" />
-    <Content Include="Content\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\style.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\variables.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\_gauge.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\_switches.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\0c2f4e7e3ce607a0f7f238a71122520ed74aaa15\_widgets.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_alert.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_background-variant.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_badge.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_border-radius.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_box-shadow.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_breakpoints.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_buttons.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_caret.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_clearfix.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_float.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_forms.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_gradients.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_grid-framework.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_grid.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_hover.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_image.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_list-group.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_lists.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_nav-divider.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_pagination.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_reset-text.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_resize.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_screen-reader.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_size.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_table-row.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_text-emphasis.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_text-hide.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_text-truncate.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_transition.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\1ea663541d8aa72314e8caea4edf18e46ea3ed2e\_visibility.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\bootstrap.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_alert.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_badge.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_breadcrumb.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_button-group.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_buttons.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_card.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_carousel.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_close.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_code.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_custom-forms.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_dropdown.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_forms.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_functions.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_grid.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_images.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_input-group.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_jumbotron.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_list-group.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_media.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_mixins.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_modal.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_nav.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_navbar.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_pagination.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_popover.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_print.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_progress.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_reboot.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_root.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_tables.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_tooltip.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_transitions.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_type.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_utilities.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\590089d940a3045eb8c8b24b183c435305a7d5a9\_variables.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\bootstrap.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_alert.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_badge.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_breadcrumb.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_button-group.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_buttons.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_card.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_carousel.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_close.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_code.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_custom-forms.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_dropdown.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_forms.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_functions.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_grid.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_images.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_input-group.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_jumbotron.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_list-group.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_media.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_mixins.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_modal.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_nav.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_navbar.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_pagination.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_popover.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_print.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_progress.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_reboot.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_root.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_tables.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_tooltip.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_transitions.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_type.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_utilities.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\62cfef4a3fbfab02df9a4ee49a4d404e06273937\_variables.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\socials.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\style.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\variables.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\_gauge.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\_switches.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6da42945727bdadaec570db1596987e0a46bfa4d\_widgets.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_align.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_background.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_borders.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_clearfix.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_display.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_embed.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_flex.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_float.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_position.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_screenreaders.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_sizing.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_spacing.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_text.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\6e69d195df721b3a89b57cbd4813c065acff1449\_visibility.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_alert.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_background-variant.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_badge.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_border-radius.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_box-shadow.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_breakpoints.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_buttons.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_caret.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_clearfix.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_float.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_forms.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_gradients.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_grid-framework.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_grid.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_hover.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_image.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_list-group.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_lists.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_nav-divider.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_pagination.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_reset-text.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_resize.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_screen-reader.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_size.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_table-row.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_text-emphasis.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_text-hide.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_text-truncate.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_transition.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\c64c3075ab570bf2e2c270d1fb05ff7e3db68931\_visibility.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_align.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_background.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_borders.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_clearfix.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_display.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_embed.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_flex.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_float.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_position.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_screenreaders.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_sizing.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_spacing.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_text.scssc" />
-    <Content Include="Content\assets\scss\.sass-cache\d192277f41c6848ff7411af310ee7b2a42ab6d76\_visibility.scssc" />
     <Content Include="Content\assets\scss\bootstrap\bootstrap-grid.css.map" />
     <Content Include="Content\assets\scss\bootstrap\bootstrap-grid.scss" />
     <Content Include="Content\assets\scss\bootstrap\bootstrap-reboot.css.map" />
@@ -612,6 +507,7 @@
     <Content Include="Content\assets\fonts\themify.eot" />
     <Content Include="Content\assets\fonts\themify.ttf" />
     <Content Include="Content\assets\fonts\themify.woff" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -775,8 +671,64 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Content\assets\scss\.sass-cache\" />
     <Folder Include="Content\Dashboard\" />
     <Folder Include="Views\Secure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Clients.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Clients.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Clients.sq.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Clients.sq.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ComputerParts.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ComputerParts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ComputerParts.sq.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ComputerParts.sq.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Computers.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Computers.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Computers.sq.resx" />
+    <EmbeddedResource Include="Resources\Dashboard.sq.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dashboard.sq.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Dashboard.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dashboard.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Employees.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Employees.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Employees.sq.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Employees.sq.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Product.sq.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Product.sq.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Product.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Product.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Roles.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Roles.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Roles.sq.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Roles.sq.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

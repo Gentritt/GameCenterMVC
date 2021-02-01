@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using GameCenterMVC.Resources
+@using GameCenterMVC.Controllers
+<!DOCTYPE html>
 <html class="no-js" lang="">
 <!--<![endif]-->
 <head>
@@ -62,79 +64,90 @@
 			<div id="main-menu" class="main-menu collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="active">
-						<a href="@Url.Action("Index", "Home")"> <i class="menu-icon fa fa-gamepad"></i>HOME</a>
+					@Html.ActionLink(Dashboard.Home, "Index","Home") <i class="menu-icon fa fa-gamepad"></i></a>
 
 					</li>
-					<h2 class="menu-title">USERS</h2><!-- /.menu-title -->
+					<h2 class="menu-title">@Dashboard.Users</h2><!-- /.menu-title -->
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-user"></i>Employess</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-user"></i>@Dashboard.Employees</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Employe")">Manage Employess</a></li>
+							<li><i class="fa fa-table"></i>@Html.ActionLink(Dashboard.Manage_Employess, "Index","Employe")</li>
 
 						</ul>
 					</li>
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-user-circle"></i>Members</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-user-circle"></i>@Dashboard.Clients</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Client")">Manage Members</a></li>
+							<li><i class="fa fa-table"></i>@Html.ActionLink(Dashboard.Manage_Members, "Index","Client")</a></li>
 
 						</ul>
 					</li>
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-user-circle"></i>Roles</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-user-circle"></i>@Dashboard.Roles</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Role")">Manage Roles</a></li>
+							<li><i class="fa fa-table"></i>@Html.ActionLink(Dashboard.Manage_Roles, "Index","Role")</a></li>
 
 						</ul>
 					</li>
-					<h2 class="menu-title">Computers</h2>
+					<h2 class="menu-title">@Dashboard.Computers</h2>
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Computers</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>@Dashboard.Computers</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Computer")">Manage Computers</a></li>
+							<li><i class="fa fa-table"></i>@Html.ActionLink(Dashboard.Manage_Computers, "Index","Computer")</a></li>
 
 						</ul>
 					</li>
-					<h2 class="menu-title">Computers Parts</h2>
+					<h2 class="menu-title">@Dashboard.ComputerParts</h2>
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Pc Parts</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>@Dashboard.ComputerParts</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "ComputerParts")">PcComputers</a></li>
+							<li><i class="fa fa-table"></i>@Html.ActionLink(Dashboard.Manage_PcParts, "Index","ComputerParts")</a></li>
 
 						</ul>
 					</li>
 
-					<h2 class="menu-title">Products</h2><!-- /.menu-title -->
+					<h2 class="menu-title">@Dashboard.Product</h2><!-- /.menu-title -->
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-delicious"></i>Products</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-delicious"></i>@Dashboard.Product</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("Index", "Product")">Manage Products</a></li>
+							<li><i class="fa fa-table"></i>@Html.ActionLink(Dashboard.Manage_Products, "Index","Product")</a></li>
 
 						</ul>
 					</li>
-					<h2 class="menu-title">Bills History</h2><!-- /.menu-title -->
+					<h2 class="menu-title">@Dashboard.Bills_History</h2><!-- /.menu-title -->
 					<li class="menu-item-has-children dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-						   aria-expanded="false"><i class="menu-icon fa fa-delicious"></i>Bills History</a>
+						   aria-expanded="false"><i class="menu-icon fa fa-delicious"></i>@Dashboard.Bills_History</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="fa fa-table"></i><a href="@Url.Action("BillsHistory", "Home")">Manage Bills</a></li>
+							<li><i class="fa fa-table"></i>@Html.ActionLink(Dashboard.Manage_Bills, "BillsHistory","Home")</a></li>
 
 						</ul>
 					</li>
 
+					<h2 class="menu-title">@Dashboard.Language</h2><!-- /.menu-title -->
+					<li class="menu-item-has-children dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+						   aria-expanded="false"><i class="menu-icon fa fa-delicious"></i>@Dashboard.Languages</a>
+						<ul class="sub-menu children dropdown-menu">
+							<li><i class="fa fa-flag"></i>@Html.ActionLink("English", "Change", "Language",  new { lngName = "en" },null)</li>
+							<li><i class="fa fa-flag-checkered"></i>@Html.ActionLink("Albanian","Change","Language", new  { lngName = "sq" },null)</li>
+						</ul>
+					</li>
 
-					<h2 class="menu-title">Logout</h2><!-- /.menu-title -->
+
+
+					<h2 class="menu-title">@Dashboard.Logout</h2><!-- /.menu-title -->
 					@*<li class="menu-item-has-children dropdown">*@
 					@*<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
 		   aria-expanded="false"><i class="menu-icon fa fa-laptop"></i>Products</a>
 		<ul class="sub-menu children dropdown-menu">*@
-					<li><i class="menu-icon "></i><a href="@Url.Action("LogOut", "Account")">LOGOUT</a></li>
+					<li><i class="menu-icon "></i>@Html.ActionLink(Dashboard.Logout, "LogOut","Account")</a></li>
 
 				</ul>
 				</li>

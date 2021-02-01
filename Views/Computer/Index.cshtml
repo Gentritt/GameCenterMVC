@@ -1,0 +1,112 @@
+﻿@model IEnumerable<GameCenterMVC.Models.Computer>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+<script src="~/Scripts/Computer/Computer.js"></script>
+<div class="top-buffer"></div>
+<div class="panel panel-primary">
+	<h2>Manage Computers</h2>
+	<hr />
+	<div class="panel-body">
+		<div class="btn-group">
+			<a href="@Url.Action("Create","Computer")" , class="btn btn-outline-danger">
+				<i class="fa fa-plus-circle"></i> Add Computer
+			</a>
+		</div>
+		<hr />
+		<div class="top-buffer"></div>
+		<table class="table table-bordered table-striped table-condensed  table-dark bg-dark" >
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>PartID</th>
+					<th>PricePerHour</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				@if (Model.Count() > 0)
+				{
+					foreach (var item in Model)
+					{
+						<tr>
+							<td>@Html.DisplayFor(modelItem => item.ComputerID)</td>
+							<td>@Html.DisplayFor(modelItem => item.ComputerPartID)</td>
+							<td>@Html.DisplayFor(modelItem => item.PricePerHour)</td>
+							<td>
+								<a href="@Url.Action("Update", "Computer", new { id = item.ComputerID })"
+								   class="btn btn-info">
+									<i class="fa fa-edit"></i>  Edit
+								</a>
+								<a href="@Url.Action("Details","Computer", new { id = item.ComputerID})"
+								   class="btn btn-info" data-target="#MyModal" data-toggle="modal">
+									<i class="fa fa-edit"></i>  Details
+								</a>
+								@*<button type="button" class="btn btn-info" data-target="#MyModal" data-toggle="modal">@Url.Action("Details", "Computer", new { id = item.ComputerID })</button>*@
+								<a onclick="Delete(@item.ComputerID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+								@*<i class="glyphicon glyphicon-trash"></i>  Delete*@
+
+							</td>
+						</tr>
+
+
+
+
+					}
+
+
+				}
+				else
+				{
+					<h2>No Data</h2>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+@section scripts{
+	<script>
+		$(function () {
+			var SuccessMessage = 'Success'
+			if (SuccessMessage != '')
+				alertify.success(SuccessMessage);
+
+		});
+
+
+function Delete(id) {
+	alertify.confirm('Game Center Management', 'Are You Sure To Delete This Record ?', function () {
+		window.location.href = '@Url.Action("Remove","Computer")/' + id;
+	}, null);
+}
+	</script>
+	<script src="~/Scripts/Modal/ResetModal.js"></script>
+}
+
+<link href="~/Content/Modal/Modal.css" rel="stylesheet" />
+<div class="container">
+
+	<div class="modal" id="MyModal" role="dialog" data-keyboard="false" data-backdrop="static">
+		<div class="modal-dialog">
+
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" data-dismiss="modal">&times;</button>
+					<h4>DemoModalTitle</h4>
+				</div>
+				@*<div class="modal-body">
+
+					</div>*@
+				@*<div class="modal-footer">
+						<button class="fa fa-plus-circle" data-dismiss="modal">
+
+						</button>
+					</div>*@
+
+			</div>
+		</div>
+	</div>
+
+</div>

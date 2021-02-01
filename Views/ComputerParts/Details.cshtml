@@ -1,0 +1,97 @@
+﻿@model GameCenterMVC.Models.ComputerParts
+<div class="modal-header bg-info">
+	@*<button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+		</button>*@
+	<h4 class="modal-title">Details Record</h4>
+</div>
+<div class="modal-body bg-light">
+	<div>
+		<table class="table table-bordered bg-light">
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.PartID)</td>
+				<td>@Html.DisplayFor(model => model.PartID)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Case)</td>
+				<td>@Html.DisplayFor(model => model.Case)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Mouse)</td>
+				<td>@Html.DisplayFor(model => model.Mouse)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.KeyBoard)</td>
+				<td>@Html.DisplayFor(model => model.KeyBoard)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.HeadSet)</td>
+				<td>@Html.DisplayFor(model => model.HeadSet)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Monitor)</td>
+				<td>@Html.DisplayFor(model => model.Monitor)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.MousePad)</td>
+				<td>@Html.DisplayFor(model => model.MousePad)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.CPU)</td>
+				<td>@Html.DisplayFor(model => model.CPU)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.GPU)</td>
+				<td>@Html.DisplayFor(model => model.GPU)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.MotherBoard)</td>
+				<td>@Html.DisplayFor(model => model.MotherBoard)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.RAM)</td>
+				<td>@Html.DisplayFor(model => model.RAM)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.SSD)</td>
+				<td>@Html.DisplayFor(model => model.SSD)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.HDD)</td>
+				<td>@Html.DisplayFor(model => model.HDD)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.PSU)</td>
+				<td>@Html.DisplayFor(model => model.PSU)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Cooler)</td>
+				<td>@Html.DisplayFor(model => model.Cooler)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.InsertBy)</td>
+				<td>@Html.DisplayFor(model => model.InsertBy)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.InsertDate)</td>
+				<td>@Html.DisplayFor(model => model.InsertDate)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.UpdateBy)</td>
+				<td>@Html.DisplayFor(model => model.UpdateBy)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.UpdateDate)</td>
+				<td>@Html.DisplayFor(model => model.UpdateDate)</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="modal-footer btn-group-toggle">
+	<button type="button" class="btn btn-danger"
+			data-dismiss="modal">
+		Close
+	</button>
+</div>
+
+

@@ -3,7 +3,7 @@
 	ViewBag.Title = "BillsHistory";
 	Layout = "~/Views/Shared/_DashboardLayout.cshtml";
 }
-<h2>Manage Bills </h2>
+<h2>@GameCenterMVC.Resources.Dashboard.Manage_Bills </h2>
 <hr />
 
 <div class="top-buffer"></div>
@@ -55,11 +55,11 @@
 							<td>
 								<a href="@Url.Action("BillDetails", "Home", new { id = item.BillID }) "
 								   class="btn btn-info" data-target="#MyModal" data-toggle="modal">
-									<i class="fa fa-edit"></i> Details
+									<i class="fa fa-edit"></i> @GameCenterMVC.Resources.Employees.Details
 								</a>
 							</td>
 							<td>
-								<a onclick="Delete(@item.BillID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+								<a onclick="Delete(@item.BillID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>@GameCenterMVC.Resources.Employees.Delete</a>
 
 							</td>
 						</tr>

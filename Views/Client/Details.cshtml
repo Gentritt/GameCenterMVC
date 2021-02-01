@@ -1,0 +1,83 @@
+﻿@model GameCenterMVC.Models.Client
+
+<div class="modal-header bg-info">
+	@*<button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+		</button>*@
+	<h4 class="modal-title">Details Record</h4>
+</div>
+<div class="modal-body bg-light">
+	<div>
+		<table class="table table-bordered bg-light">
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.ClientID)</td>
+				<td>@Html.DisplayFor(model => model.ClientID)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Name)</td>
+				<td>@Html.DisplayFor(model => model.Name)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.LastName)</td>
+				<td>@Html.DisplayFor(model => model.LastName)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.PersonalID)</td>
+				<td>@Html.DisplayFor(model => model.PersonalID)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Address)</td>
+				<td>@Html.DisplayFor(model => model.Address)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Birthday)</td>
+				<td>@Html.DisplayFor(model => model.Birthday)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.PhoneNumber)</td>
+				<td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Email)</td>
+				<td>@Html.DisplayFor(model => model.Email)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Username)</td>
+				<td>@Html.DisplayFor(model => model.Username)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Password)</td>
+				<td>@Html.DisplayFor(model => model.Password)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.Balance)</td>
+				<td>@Html.DisplayFor(model => model.Balance)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.InsertBy)</td>
+				<td>@Html.DisplayFor(model => model.InsertBy)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.InsertDate)</td>
+				<td>@Html.DisplayFor(model => model.InsertDate)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.UpdateBy)</td>
+				<td>@Html.DisplayFor(model => model.UpdateBy)</td>
+			</tr>
+			<tr>
+				<td>@Html.DisplayNameFor(model => model.UpdateDate)</td>
+				<td>@Html.DisplayFor(model => model.UpdateDate)</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="modal-footer btn-group-toggle">
+	<button type="button" class="btn btn-danger"
+			data-dismiss="modal">
+		Close
+	</button>
+</div>
+
+
+

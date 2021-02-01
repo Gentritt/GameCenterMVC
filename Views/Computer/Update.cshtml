@@ -1,0 +1,71 @@
+﻿@model GameCenterMVC.Models.Computer
+@using GameCenterMVC.DAL
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Computer</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+    @Html.HiddenFor(model => model.ComputerID)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ComputerPartID, htmlAttributes: new { @class = "control-label col-md-5" })
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.ComputerPartID, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.DropDownListFor(model => model.ComputerPartID, new SelectList(ComputerPartsDAL.GetALL().ToList(), "PartID", "PartID"), new
+       {
+           @class = "form-control"
+
+       })
+            @Html.ValidationMessageFor(model => model.ComputerPartID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PricePerHour, htmlAttributes: new { @class = "control-label col-md-5" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PricePerHour, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PricePerHour, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UpdateBy, htmlAttributes: new { @class = "control-label col-md-5" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UpdateBy, new { htmlAttributes = new { @class = "form-control", @Value = Session["Username"], @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.UpdateBy, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UpdateDate, htmlAttributes: new { @class = "control-label col-md-5" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.UpdateDate, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToShortDateString(), @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.UpdateDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-info" />
+            <input type="reset" value="Reset" class="btn btn-danger" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

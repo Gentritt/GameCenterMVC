@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<GameCenterMVC.Models.Products>
 @using GameCenterMVC.Models
+@using GameCenterMVC.Resources
 
 @{
 	ViewBag.Title = "Index";
@@ -8,12 +9,12 @@
 
 <div class="top-buffer"></div>
 <div class="panel panel-primary">
-	<h2>Manage Products</h2>
+	<h2>@Dashboard.Manage_Products</h2>
 	<hr />
 	<div class="panel-body">
 		<div class="btn-group">
 			<a href="@Url.Action("Create","Product")" , class="btn btn-outline-danger">
-				<i class="fa fa-plus-circle"></i>  Add Product
+				<i class="fa fa-plus-circle"></i> @Product.Add_Product
 			</a>
 
 		</div>
@@ -23,9 +24,9 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Price</th>
-					<th>Quantity</th>
-					<th>Name</th>
+					<th>@Product.Price</th>
+					<th>@Product.Quantity</th>
+					<th>@Product.Name</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,13 +43,13 @@
 							<td>
 								<a href="@Url.Action("Update", "Product", new { id = item.ProductID })"
 								   class="btn btn-info">
-									<i class="fa fa-edit"></i>  Edit
+									<i class="fa fa-edit"></i> @Employees.Edit
 								</a>
 								<a href="@Url.Action("Details", "Product", new { id = item.ProductID })"
 								   class="btn btn-info" data-target="#MyModal" data-toggle="modal">
-									<i class="fa fa-edit"></i>  Details
+									<i class="fa fa-edit"></i> @Employees.Details
 								</a>
-								<a onclick="Delete(@item.ProductID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+								<a onclick="Delete(@item.ProductID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>@Employees.Delete</a>
 							</td>
 						</tr>
 					}

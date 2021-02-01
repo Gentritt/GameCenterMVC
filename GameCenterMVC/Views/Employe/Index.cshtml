@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<GameCenterMVC.Models.Employee>
-
+@using GameCenterMVC.Resources
 @{
 	ViewBag.Title = "Index";
 	Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -8,12 +8,12 @@
 	@*<link href="~/Content/Table/TableSpacing.css" rel="stylesheet" />*@
 <div class="top-buffer"></div>
 <div class="panel panel-primary">
-	<h2>Manage Employees</h2>
+	<h2>@Dashboard.Manage_Employess</h2>
 	<hr />
 	<div class="panel-body">
 		<div class="btn-group">
 			<a href="@Url.Action("Create","Employe")" , class="btn btn-outline-danger">
-				<i class="fa fa-plus-circle"></i>  Add Employe
+				<i class="fa fa-plus-circle"></i> @Employees.Add_Employe
 			</a>
 		</div>
 		<hr />
@@ -22,17 +22,17 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Name</th>
-					<th>Lastname</th>
-					<th>PersonalID</th>
-					<th>Role</th>
-					<th>Adress</th>
-					<th>Birthday</th>
-					<th>Phonenumber</th>
-					<th>Email</th>
-					<th>Username</th>
-					<th>Password</th>
-					<th>Paycheck</th>
+					<th>@Employees.Name</th>
+					<th>@Employees.LastName</th>
+					<th>@Employees.PersonalID</th>
+					<th>@Employees.Role</th>
+					<th>@Employees.Address</th>
+					<th>@Employees.Birthday</th>
+					<th>@Employees.PhoneNumber</th>
+					<th>@Employees.Email</th>
+					<th>@Employees.UserName</th>
+					<th>@Employees.Password</th>
+					<th>@Employees.PayCheck</th>
 
 				</tr>
 			</thead>
@@ -59,17 +59,17 @@
 					<td>
 						<a href="@Url.Action("Edit", "Employe", new { id = item.EmployeeID })"
 						   class="btn btn-info">
-							<i class="fa fa-edit"></i>  Edit
+							<i class="fa fa-edit"></i>@Employees.Edit
 						</a>
 					</td>
 					<td>
 						<a href="@Url.Action("Details", "Employe", new { id = item.EmployeeID })"
 						   class="btn btn-info" data-target="#MyModal" data-toggle="modal">
-							<i class="fa fa-edit"></i> Details
+							<i class="fa fa-edit"></i>@Employees.Details
 						</a>
 					</td>
 					<td>
-						<a onclick="Delete(@item.EmployeeID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>Delete</a>
+						<a onclick="Delete(@item.EmployeeID)" ( class="btn btn-danger"><i class="fa fa-trash-o"></i>@Employees.Delete</a>
 						@*<i class="glyphicon glyphicon-trash"></i>  Delete*@
 
 					</td>

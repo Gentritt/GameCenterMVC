@@ -114,7 +114,8 @@ namespace GameCenterMVC.Controllers
             bill.EndTime = DateTime.Parse(DateTime.Now.ToLongTimeString());
             bill.Total = 1;     
             billsDAL.Update(id, bill);
-            return PartialView("ShowBill", bill);
+            //bill = BillsDAL.Get(id);
+            return PartialView("ShowBill",bill);
 		}
 
         public ActionResult ShowBill(int id)

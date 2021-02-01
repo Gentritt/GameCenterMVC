@@ -1,5 +1,6 @@
 ﻿@model GameCenterMVC.Models.Employee
 @using GameCenterMVC.DAL
+@using GameCenterMVC.Resources
 @{
     ViewBag.Title = "ADD";
     Layout = "~/Views/Shared/_DashboardLayout.cshtml";
@@ -165,7 +166,7 @@
         </div>
     </div>
     <div class="form-group">
-        <input type="submit" value="Submit" class="btn btn-info" />
+        <input type="submit" value="@Employees.Submit" class="btn btn-info" />
         <input type="reset" value="reset" class="btn btn-danger" />
 
     </div>
@@ -180,5 +181,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(Employees.Back_To_List, "Index")
 </div>
