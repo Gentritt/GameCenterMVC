@@ -17,7 +17,7 @@
     <AssemblyName>GameCenterMVC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44365</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
@@ -352,8 +352,8 @@
     <Content Include="Content\IconStyle.css" />
     <Content Include="Content\Images\camera-2-icon.png" />
     <Content Include="Content\Images\GamingPC.jpg" />
-    <Content Include="Content\Images\PC-a-icon.png" />
-    <Content Include="Content\Images\PC-icon.png" />
+    <Content Include="Content\Images\PC-a-icon.jpg" />
+    <Content Include="Content\Images\PC-icon.jpg" />
     <Content Include="Content\Images\PcPic.png" />
     <Content Include="Content\Images\Space.jpg" />
     <Content Include="Content\Label.css" />
@@ -749,7 +749,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56931</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44365/</IISUrl>
+          <IISUrl>http://www.game-center.com/gameCenterMVC</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://www.game-center.com/gameCenterMVC</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

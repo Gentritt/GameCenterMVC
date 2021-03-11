@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="GameCenterMVC" />
+  <setParameter name="GameCenter-Web.config Connection String" value="data source=DESKTOP-4I7ISP1\SQLEXPRESS;initial catalog=GameCenterMVC;User ID=sa; Password=123;" />
+</parameters>
