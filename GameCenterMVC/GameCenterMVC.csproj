@@ -17,7 +17,7 @@
     <AssemblyName>GameCenterMVC</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44365</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
@@ -749,9 +749,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56931</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://www.game-center.com/gameCenterMVC</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://www.game-center.com/gameCenterMVC</IISAppRootUrl>
+          <IISUrl>http://localhost:56931/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
