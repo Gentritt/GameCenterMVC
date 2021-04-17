@@ -12,13 +12,15 @@ namespace GameCenterMVC.Controllers
     {
         ClientDAL clientDAL = new ClientDAL();
         //[AuthorizedUsers("admin")]
-        [AuthorizedUsers("admin", "manager")]
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Index()
         {
             List<Client> clients = ClientDAL.GetALL().ToList();
             ViewBag.Client = clients;
             return View(clients);
         }
+
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Create()
         {
             return View();
@@ -47,7 +49,7 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
-
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Update(int id)
 		{
 
@@ -55,6 +57,7 @@ namespace GameCenterMVC.Controllers
 		}
 
         [HttpPost]
+     
         public ActionResult Update(int id, Client client)
 		{
             ValidationsExists validationsExists = new ValidationsExists();
@@ -75,6 +78,7 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
 		}
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Remove(int id)
 		{
 			try
@@ -94,6 +98,7 @@ namespace GameCenterMVC.Controllers
                 return View();
 			}
 		}
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Details(int id)
 		{
             Client client = ClientDAL.GetByID(id);

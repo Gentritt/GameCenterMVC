@@ -12,13 +12,14 @@ namespace GameCenterMVC.Controllers
     {
         // GET: Role
         RolesDAL rolesDAL = new RolesDAL();
-        [AuthorizedUsers("admin", "manager")]
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Index()
         {
             List<Roles> roles = RolesDAL.GetALL().ToList();
             ViewBag.Roles = roles;
             return View(roles);
         }
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Create()
         {
             return View();
@@ -48,7 +49,7 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
-
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Update(int id)
 		{
             return View(RolesDAL.GetByID(id));
@@ -73,7 +74,7 @@ namespace GameCenterMVC.Controllers
 			}
         
         }
-
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Remove(int id)
 		{
 			try

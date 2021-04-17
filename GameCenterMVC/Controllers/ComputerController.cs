@@ -12,7 +12,7 @@ namespace GameCenterMVC.Controllers
     {
         // GET: Computer
         ComputerDAL computerDAL = new ComputerDAL();
-        [AuthorizedUsers("admin", "manager")]
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Index()
         {
             List<Computer> computers = computerDAL.GetALL().ToList();
@@ -20,6 +20,7 @@ namespace GameCenterMVC.Controllers
             return View(computers);
 
         }
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +48,7 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Update(int id)
 		{
             return View(ComputerDAL.getPcByID(id));
@@ -69,6 +71,7 @@ namespace GameCenterMVC.Controllers
                 return View();
 			}
 		}
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Remove(int id)
 		{
 			try

@@ -11,13 +11,14 @@ namespace GameCenterMVC.Controllers
     public class ComputerPartsController : Controller
     {
         ComputerPartsDAL computerPartsDAL = new ComputerPartsDAL();
-        [AuthorizedUsers("admin", "manager")]
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Index()
         {
             List<ComputerParts> pcParts = ComputerPartsDAL.GetALL().ToList();
             ViewBag.ComputerParts = pcParts;
             return View(pcParts);
         }
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Create()
         {
             return View();
@@ -44,6 +45,7 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Update(int id)
 		{
             return View(ComputerPartsDAL.GetByID(id));
@@ -67,6 +69,7 @@ namespace GameCenterMVC.Controllers
                 return View();
 			}
 		}
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Remove(int ID)
 		{
 			try
@@ -84,7 +87,7 @@ namespace GameCenterMVC.Controllers
                 return View();
 			}
 		}
-
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Details(int id)
 		{
             ComputerParts parts = ComputerPartsDAL.GetByID(id);

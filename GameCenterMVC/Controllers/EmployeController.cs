@@ -11,22 +11,16 @@ namespace GameCenterMVC.Controllers
     public class EmployeController : Controller
     {
         EmployeeDAL employeeDAL = new EmployeeDAL();
-        [AuthorizedUsers("admin","manager")]
-		public ActionResult Index()
+        [AuthorizedUsers(RolesName.Admin)]
+        public ActionResult Index()
         {
             EmployeeDAL employee = new EmployeeDAL();
             List<Employee> employees = employee.GetALL().ToList();
             ViewBag.Employee = employees;
             return View(employees);
         }
-		//public ActionResult IndexTest()
-		//{
-		//	List<Employee> employees = EmployeeDAL.GetAll().ToList();
-		//	ViewBag.Employee = employees;
-		//	return View(employees);
 
-		//}
-
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Create()
         {
             return View();
@@ -55,7 +49,7 @@ namespace GameCenterMVC.Controllers
                 return View();
 			}
         }
-
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Edit(int id)
         {
             return View(EmployeeDAL.GetByID(id));
@@ -80,9 +74,7 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
-
-
-
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Delete(int id)
         {
             try
@@ -100,6 +92,7 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Details(int id)
 		{
 

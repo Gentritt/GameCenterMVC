@@ -153,10 +153,10 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Interfaces\ICrudOperations.cs" />
     <Compile Include="Models\Login.cs" />
-    <Compile Include="Models\MyRoleProvider.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Roles.cs" />
+    <Compile Include="Models\RolesName.cs" />
     <Compile Include="Models\ServiceHelper.cs" />
     <Compile Include="Models\StaticCLass.cs" />
     <Compile Include="Models\ValidationsExists.cs" />

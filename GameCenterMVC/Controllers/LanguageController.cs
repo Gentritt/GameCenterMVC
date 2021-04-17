@@ -15,7 +15,7 @@ namespace GameCenterMVC.Controllers
         {
             return View();
         }
-
+       
         public ActionResult Change(string lngName)
 		{
             if(lngName != null)

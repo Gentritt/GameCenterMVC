@@ -12,7 +12,7 @@ namespace GameCenterMVC.Controllers
     {
         Products products = new Products();
         ProductDAL productDAL = new ProductDAL();
-        [AuthorizedUsers("admin", "manager")]
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Index()
         {
 		
@@ -21,6 +21,7 @@ namespace GameCenterMVC.Controllers
 
 			//ViewBag.Products = products;
         }
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Create()
         {
             return View();
@@ -47,7 +48,7 @@ namespace GameCenterMVC.Controllers
                 return View();
             }
         }
-
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Update(int id)
 		{
             return View(ProductDAL.getByID(id));
@@ -71,7 +72,7 @@ namespace GameCenterMVC.Controllers
 			}
 
 		}
-
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Remove(int id)
 		{
 			try
@@ -89,6 +90,7 @@ namespace GameCenterMVC.Controllers
                 return View();
 			}
 		}
+        [AuthorizedUsers(RolesName.Admin)]
         public ActionResult Details(int id)
 		{
             Products products = ProductDAL.getByID(id);
