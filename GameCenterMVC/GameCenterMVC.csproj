@@ -226,6 +226,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Roles.sq.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\alertifyjs\alertify.css" />

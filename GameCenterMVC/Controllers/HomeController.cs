@@ -56,6 +56,9 @@ namespace GameCenterMVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    if (bill.EndTime == null)
+                        return View("PrintBill", bill);
+
                     billsDAL.ADD(bill);
                     return RedirectToAction("Index");
 
@@ -108,11 +111,19 @@ namespace GameCenterMVC.Controllers
                 return View();
 			}
 		}
+      
         public ActionResult UpdateBills(int id, Bill bill)
         {
-            
+            Computer computer = new Computer();
+            var starttime = bill.StartTime;
             bill.EndTime = DateTime.Parse(DateTime.Now.ToLongTimeString());
-            bill.Total = 1;     
+            double minutes = (bill.EndTime - starttime).TotalHours;
+            var cost = 1;
+            if (minutes < 1)
+                bill.Total = Convert.ToDouble(cost);
+            else
+                bill.Total = Convert.ToDouble(cost + Math.Round(minutes - 1));
+            //bill.Total = 1;     
             billsDAL.Update(id, bill);
             //bill = BillsDAL.Get(id);
             return PartialView("ShowBill",bill);

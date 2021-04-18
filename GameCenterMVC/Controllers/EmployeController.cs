@@ -1,5 +1,6 @@
 ﻿using GameCenterMVC.DAL;
 using GameCenterMVC.Models;
+using GameCenterMVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,17 +27,21 @@ namespace GameCenterMVC.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(Employee employee)
+        public ActionResult Create(Employee employe)
         {
             ValidationsExists validations = new ValidationsExists();
             EmployeeDAL employeeDAL = new EmployeeDAL();
-            if (validations.ExitsEmployee(employee.UserName))
+
+           
+            if (validations.ExitsEmployee(employe.UserName))
                 ModelState.AddModelError("UserName", "Please Try Another Username, this one Exists !");
             try
 			{
 				if (ModelState.IsValid)
 				{
-                    employeeDAL.ADD(employee);
+                    employe.InsertDate = DateTime.Now;
+                
+                    employeeDAL.ADD(employe);  
                     return RedirectToAction("Index");
 
 				}

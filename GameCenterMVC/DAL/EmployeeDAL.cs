@@ -130,8 +130,7 @@ namespace GameCenterMVC.DAL
 			}
 		}
 
-		public int ADD(Employee model)
-		{
+		public int ADD(Employee model){
 		
 			try
 			{
